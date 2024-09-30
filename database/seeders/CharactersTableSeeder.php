@@ -17,7 +17,7 @@ class CharactersTableSeeder extends Seeder
      */
     public function run()
     {
-        $characters = config('db_characters');
+        $characters = config('db_characters.characters');
 
         foreach ($characters as $character) {
             $NewCharacter = new Character();
