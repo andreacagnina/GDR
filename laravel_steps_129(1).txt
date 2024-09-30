@@ -25,7 +25,6 @@ Una volta creata la repo template, per creare un nuovo progetto partite dal punt
 1.1-per creare una tabella conviene utilizzare come nome della migration create_nome_tabella_table (es php artisan make:migration create_houses_table)
 
 
-
 1.2- realizzo la tabella in up (es $table->string('title', 50); $table->year('year'); $table->float('vote', 2, 1);) $table-> e $table->timestamps sono di default e restano sempre.
 
 1.2.1- se voglio aggiornare una tabella uso il comando php artisan make:migration nome_della_migration --table=nometabella (es. php artisan make:migration update_house_table --table=houses)
@@ -49,6 +48,7 @@ E' POSSIBILE MODIFICARE I DATI NELLE COLONNE GUARDARE DAL MIN 12:30 DELLA LEZION
 1.3 lancio il comando php artisan migrate
 
 1- Creo il model a partire dal nome della tabella. Il nome del model deve essere in pascalcase e singola. il comando è: php artisan make:model NomeModello (es. php artisan make:model House)
+
 1.2 in model use Faker\Generator as Faker;
 CICLO FAKER GUARDA LEZIONE DAL MINUTO 12:44
 
