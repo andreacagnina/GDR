@@ -1,0 +1,109 @@
+INSTALLAZIONE E CONFIGURAZIONE DI LARAVEL
+1 - composer create-project laravel/laravel:^9.2 NOME REPO/PROGETTO (metto :^9.2 per indicare la versione di laravel da installare)
+2 - Entro nella cartella con il terminale e digito code . (apro il progetto in vscode in generale)
+3 - Creo la repo da qui
+4 - Lancio il comando php artisan serve per creare un server virtuale nel quale girerà la mia applicazione
+5 - Lanciare il comando composer require pacificdev/laravel_9_preset per installare il pacchetto
+6 - Lanciare il comando php artisan preset:ui bootstrap
+7 - Lanciare il comando npm i
+8 - Rinominare il file vite.config.js in vite.config.mjs OPPURE aggiungere/modificare in "type": "module" nel file package.json
+9 - eseguire il comando npm run dev
+
+CREAZIONE DI UN PROGETTO A PARTIRE DA UNA REPO TEMPLATE
+1 - Creo un progetto in locale (non deve avere caratteristiche di un progetto specifico!)
+2 - Lo pubblico su GitHub normalmente
+3 - Vado su GitHub, e nella pagina settings di questa repo, imposto che sia una repo template
+4 - Vado nella pagina code e seleziono "use this template" -> create new repository
+5 - Mettere i dati obbligatori e pubblica la repo, per poi crearla.
+6 - Clonare la repo da VSCode in un cartella a piacimento e quindi aprire la repo appena clonata
+7 - Lanciare i comandi composer install, npm i, copiare il file .env.example e rinominarlo in .env
+8 - Lanciare il comando php artisan key:generate (fondamentale, perché senza l'APP_KEY l'applicazione non parte). 
+
+Una volta creata la repo template, per creare un nuovo progetto partite dal punto 4
+
+
+1.1-per creare una tabella conviene utilizzare come nome della migration create_nome_tabella_table (es php artisan make:migration create_houses_table)
+
+
+
+1.2- realizzo la tabella in up (es $table->string('title', 50); $table->year('year'); $table->float('vote', 2, 1);) $table-> e $table->timestamps sono di default e restano sempre.
+
+1.2.1- se voglio aggiornare una tabella uso il comando php artisan make:migration nome_della_migration --table=nometabella (es. php artisan make:migration update_house_table --table=houses)
+1.2.2- modificare la nuova migrazione per esempio e dopo lanciare il comando php artisan migrate
+ {
+        Schema::table('trains', function (Blueprint $table) {
+            // Cambia il tipo di colonna delay in unsignedSmallInteger
+            $table->unsignedSmallInteger('delay')->default(0)->change();
+        });
+    }
+1.2.3- se voglio tornare indietro dobbiamo scrivere in down cosa vogliamo che venga ripristinato per es{
+
+        Schema::table('trains', function (Blueprint $table) {
+            // Ripristina il tipo di colonna delay a boolean
+            $table->boolean('delay')->default(false)->change();
+        });
+    } 
+    e poi usare il comando php artisan migrate:rollback
+E' POSSIBILE MODIFICARE I DATI NELLE COLONNE GUARDARE DAL MIN 12:30 DELLA LEZIONE 
+
+1.3 lancio il comando php artisan migrate
+
+1- Creo il model a partire dal nome della tabella. Il nome del model deve essere in pascalcase e singola. il comando è: php artisan make:model NomeModello (es. php artisan make:model House)
+1.2 in model use Faker\Generator as Faker;
+CICLO FAKER GUARDA LEZIONE DAL MINUTO 12:44
+
+2- creo il seeder lanciando il comando php artisan make:seeder NomeTabellaTableSeeder (in camelcase es HousesTableSeeder)
+
+IN SEEDER USO 
+use App\Models\Train;
+use Faker\Generator as Faker; ( PER DATI FALSI)
+E POPOLO LE MIE COLONNE ES.    public function run(Faker $faker)
+    {
+        for ($i = 0; $i < 10; $i++) {
+            $train = new Train();
+            $train->company = $faker->company();
+            $train->departure_station = $faker->streetName();
+            $train->arrival_station = $faker->streetName();
+            $train->departure_time = $faker->time();
+            $train->arrival_time = $faker->time();
+            $train->train_code = $faker->randomNumber(5, false);
+            $train->number_of_carriages = $faker->numberBetween(1, 100);
+            $train->delay = $faker->boolean();
+            $train->suppressed = $faker->boolean();
+
+            $train->save();
+        }
+    }
+
+    eseguo il comando php artisan db:seed --class=TrainsTableSeeder
+
+    se voglio modificare il contenuto delle colonne, vado su myadminaphp e cancello il contenuto dal databse, poi faccio le modifiche che voglio sul seeder e rilancio il comando php artisan db:seed --class=TrainsTableSeeder
+
+----> puoi fare un controller per la home
+AGGIORNAMENTO 27/9
+php artisan make:controller --resource PastaController
+
+in web fare l'use di PastaController
+
+e route::resource('pastas', PastaController::class);
+
+--3-- creo il controller relativo al Model con il comando php artisan make:controller NomeController. Il nome del model deve essere in pascalcase e singolare es(php artisan make:controller MovieController). --
+
+specifico la model da usare es: use App\Models\Train;
+e definisco i metodi che mi restituiscono i record della tabella per mostrarli alla view es class TrainController extends Controller
+{
+    public function index()
+    {
+        $trains = Train::all();
+        return view('home', compact('trains'));
+    }
+}
+4- uso il controller use App\Http\Controllers\TrainController; e realizzo le rotte nel file web.php importando il controller creato 
+5- Realizzo le views che mi mostrano i dati recuperati dal controller
+
+
+
+
+
+composer require carbonphp/carbon-doctrine-types:^2.1.0
+composer require doctrine/dbal
