@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name', 200);
             $table->text('description');
             $table->integer('strength');
             $table->integer('defence');
             $table->integer('speed');
             $table->integer('intelligence');
             $table->integer('life');
-            $table->BigInteger('type_id');
+            $table->foreignId('type_id');
             $table->timestamps();
         });
     }
