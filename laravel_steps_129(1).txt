@@ -22,88 +22,64 @@ CREAZIONE DI UN PROGETTO A PARTIRE DA UNA REPO TEMPLATE
 Una volta creata la repo template, per creare un nuovo progetto partite dal punto 4
 
 
-1.1-per creare una tabella conviene utilizzare come nome della migration create_nome_tabella_table (es php artisan make:migration create_houses_table)
+
+1. Creare un Model
+Se desideri creare anche una migrazione insieme al modello, puoi usare l'opzione:
+php artisan make:model NomeModello -m
+
+2. Creare un Controller
+-Se vuoi creare un controller con metodi CRUD predefiniti (index, create, store, show, edit, update, destroy), puoi usare l'opzione --resource:
+
+php artisan make:controller NomeController --resource
+
+in Control usare il Model use App\Models\NomeModello;
+
+in WEB scrivere:
+route::resource('pastas', NomeController::class);
 
 
-1.2- realizzo la tabella in up (es $table->string('title', 50); $table->year('year'); $table->float('vote', 2, 1);) $table-> e $table->timestamps sono di default e restano sempre.
+3. Creare un Seeder
 
-1.2.1- se voglio aggiornare una tabella uso il comando php artisan make:migration nome_della_migration --table=nometabella (es. php artisan make:migration update_house_table --table=houses)
-1.2.2- modificare la nuova migrazione per esempio e dopo lanciare il comando php artisan migrate
- {
-        Schema::table('trains', function (Blueprint $table) {
-            // Cambia il tipo di colonna delay in unsignedSmallInteger
-            $table->unsignedSmallInteger('delay')->default(0)->change();
-        });
-    }
-1.2.3- se voglio tornare indietro dobbiamo scrivere in down cosa vogliamo che venga ripristinato per es{
+php artisan make:seeder NomeSeeder
 
-        Schema::table('trains', function (Blueprint $table) {
-            // Ripristina il tipo di colonna delay a boolean
-            $table->boolean('delay')->default(false)->change();
-        });
-    } 
-    e poi usare il comando php artisan migrate:rollback
-E' POSSIBILE MODIFICARE I DATI NELLE COLONNE GUARDARE DAL MIN 12:30 DELLA LEZIONE 
-
-1.3 lancio il comando php artisan migrate
-
-1- Creo il model a partire dal nome della tabella. Il nome del model deve essere in pascalcase e singola. il comando è: php artisan make:model NomeModello (es. php artisan make:model House)
-
-1.2 in model use Faker\Generator as Faker;
-CICLO FAKER GUARDA LEZIONE DAL MINUTO 12:44
-
-2- creo il seeder lanciando il comando php artisan make:seeder NomeTabellaTableSeeder (in camelcase es HousesTableSeeder)
-
-IN SEEDER USO 
-use App\Models\Train;
-use Faker\Generator as Faker; ( PER DATI FALSI)
-E POPOLO LE MIE COLONNE ES.    public function run(Faker $faker)
+4.Dopo aver creato il seeder, puoi eseguirlo con:
+ESEMPIO DB IN CONFIG:
+   public function run()
     {
-        for ($i = 0; $i < 10; $i++) {
-            $train = new Train();
-            $train->company = $faker->company();
-            $train->departure_station = $faker->streetName();
-            $train->arrival_station = $faker->streetName();
-            $train->departure_time = $faker->time();
-            $train->arrival_time = $faker->time();
-            $train->train_code = $faker->randomNumber(5, false);
-            $train->number_of_carriages = $faker->numberBetween(1, 100);
-            $train->delay = $faker->boolean();
-            $train->suppressed = $faker->boolean();
+        $characters = config('db_characters.characters');
 
-            $train->save();
+        foreach ($characters as $character) {
+            $NewCharacter = new Character();
+            $NewCharacter->name = $character['name'];
+            $NewCharacter->description = $character['description'];
+
+            $NewCharacter->save();
+        }
+    }
+ESEMPIO DATI FALSI SENZA DB IN CONFIG:
+use Faker\Generator as Faker;
+
+    public function run(Faker $faker)
+    {
+        for ($i = 0; $i < 20; $i++) {
+            $comic = new Comic();
+            $comic->title = $faker->words(3, true);
+            $comic->author = $faker->firstName() . ' ' . $faker->lastName();
+            $comic->description = $faker->paragraph();
+            $comic->price = $faker->randomFloat(2, 0, 9999);
+
+            $comic->save();
         }
     }
 
-    eseguo il comando php artisan db:seed --class=TrainsTableSeeder
+php artisan db:seed --class=NomeSeeder
 
-    se voglio modificare il contenuto delle colonne, vado su myadminaphp e cancello il contenuto dal databse, poi faccio le modifiche che voglio sul seeder e rilancio il comando php artisan db:seed --class=TrainsTableSeeder
+Per modificare il contenuto delle colonne, vado su myadminaphp cancello il contenuto dal databse, poi faccio le modifiche che voglio sul seeder e rilancio il comando php artisan db:seed --class=TrainsTableSeeder
 
-----> puoi fare un controller per la home
-AGGIORNAMENTO 27/9
-php artisan make:controller --resource PastaController
+5.Per applicare tutte le migrazioni create, puoi eseguire:
 
-in web fare l'use di PastaController
-
-e route::resource('pastas', PastaController::class);
-
---3-- creo il controller relativo al Model con il comando php artisan make:controller NomeController. Il nome del model deve essere in pascalcase e singolare es(php artisan make:controller MovieController). --
-
-specifico la model da usare es: use App\Models\Train;
-e definisco i metodi che mi restituiscono i record della tabella per mostrarli alla view es class TrainController extends Controller
-{
-    public function index()
-    {
-        $trains = Train::all();
-        return view('home', compact('trains'));
-    }
-}
-4- uso il controller use App\Http\Controllers\TrainController; e realizzo le rotte nel file web.php importando il controller creato 
-5- Realizzo le views che mi mostrano i dati recuperati dal controller
-
-
-
-
-
-composer require carbonphp/carbon-doctrine-types:^2.1.0
-composer require doctrine/dbal
+In Migrations sezione UP realizzo le colonne della tabella
+$table->string('title', 50); 
+$table->year('year'); 
+$table->float('vote', 2, 1);
+php artisan migrate
