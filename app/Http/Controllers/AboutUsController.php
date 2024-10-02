@@ -47,7 +47,7 @@ class AboutUsController extends Controller
                 'quote' => 'Il mondo è cambiamento; la vita è opinione.',
                 'author' => 'Marcus Aurelius',
                 'email' => 'abc@bca.it',
-                'image' => 'avocado.png'
+                'image' => '',
             ],
         ];
         
