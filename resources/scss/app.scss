@@ -1,21 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-    margin: 0;
-    font-family: 'Press Start 2P', cursive;
     background-color: #1d1d1d;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: url('/images/background-pixel.png');
-    background-size: cover;
+    font-family: 'Press Start 2P', cursive;
 }
 
 #home {
     text-align: center;
-    margin-top: 50px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px);
+    background-image: url('../../public/images/PixelArtBackground.gif');
+    background-size: cover;
 
     h1 {
         font-size: 3rem;
@@ -46,6 +44,18 @@ body {
     }
 }
 
-.navbar li {
-    margin: 0px 10px;
+header {
+    height: 60px;
+
+    .navbar {
+        align-items: center;
+    }
+
+    .navbar li {
+        margin: 0px 10px;
+    }
+
+    .nav-link:hover {
+        color: #f2e857;
+    }
 }
