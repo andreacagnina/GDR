@@ -12,7 +12,12 @@ class CharacterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {}
+    public function index()
+    {
+        $characters = Character::all();
+
+        return view('characters.index', compact('characters'));
+    }
 
     /**
      * Show the form for creating a new resource.
