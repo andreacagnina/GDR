@@ -21,7 +21,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('characters.index')}}" class="nav-link" style="line-height: 60px;">
+                                <a href="{{ route('character.index')}}" class="nav-link" style="line-height: 60px;">
                                     <h4 class="m-0">Characters</h4>
                                 </a>
                             </li>
