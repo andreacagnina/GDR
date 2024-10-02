@@ -7,7 +7,7 @@
                     <h1 class="text-center">Pixel GDR World</h1>
                     <p class="text-center">Immergiti nel nostro fantastico mondo in pixel art</p>
                     <div class="text-center">
-                        <a href="{{ route('homepage') }}" class="btn-start">Inizia</a>
+                        <a href="{{ route('characters.index') }}" class="btn-start">Inizia</a>
                     </div>
                 </div>
             </div>

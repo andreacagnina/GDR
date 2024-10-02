@@ -1,54 +1,54 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container my-5">
+    <div class="container my-3">
         <div class="row">
             <div class="col-12">
-                <div class="content text-center d-flex justify-content-between align-items-center">
-                    <div>
-                        <h1>Characters</h1>
-                    </div>
-                    <div>
-                        <a href="{{ Route('characters.create') }}"><i class="fa-solid fa-plus"></i> Add</a>
-                    </div>
+                <div class="content text-center d-flex justify-content-between align-items-baseline">
+                    <h1>Characters</h1>
+                    <h6><a href="{{ Route('characters.create') }}">
+                            + Add More
+                        </a></h6>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
                 <div class="content">
-                    <table class="table table-striped table-sm">
+                    <table class="table table-dark table-striped-columns">
                         <thead>
-                            <tr>
-                                <th>ID</th>
+                            <tr class="text-center">
                                 <th>Name</th>
-                                <th>Descritpion</th>
                                 <th>Strength</th>
                                 <th>Defence</th>
                                 <th>Speed</th>
                                 <th>Intelligence</th>
                                 <th>Life</th>
-                                <th>Type ID</th>
-                                <th>Strumenti</th>
+                                <th>Class</th>
+                                <th>Tools</th>
                             </tr>
                         </thead>
 
-                        <tbody>
+                        <tbody class="table-group-divider">
                             @foreach ($characters as $character)
                                 <tr>
-                                    <td>{{ $character->id }}</td>
-                                    <td>{{ $character->name }}</td>
-                                    <td>{{ $character->descritpion }}</td>
-                                    <td>{{ $character->strength }}</td>
-                                    <td>{{ $character->defence }}</td>
-                                    <td>{{ $character->speed }}</td>
-                                    <td>{{ $character->intelligence }}</td>
-                                    <td>{{ $character->life }}</td>
-                                    <td>{{ $character->type_id }}</td>
-                                    <td class="d-flex justify-content-between align-items-center"><a class="text-success"
-                                            href="{{ route('characters.show', ['character' => $character->id]) }}"><i
-                                                class="fa-solid fa-eye"></i></a>
-                                        <a class="text-warning"
+                                    <td><a
+                                            href="{{ route('characters.show', ['character' => $character->id]) }}">{{ $character->name }}</a>
+                                    </td>
+                                    <td>{{ $character->strength }}
+                                    </td>
+                                    <td>{{ $character->defence }}
+                                    </td>
+                                    <td>{{ $character->speed }}
+                                    </td>
+                                    <td>{{ $character->intelligence }}
+                                    </td>
+                                    <td>{{ $character->life }}
+                                    </td>
+                                    <td>{{ $character->type_id }}
+                                    </td>
+                                    <td class="d-flex align-items-center justify-content-evenly">
+                                        <a class="color"
                                             href="{{ route('characters.edit', ['character' => $character->id]) }}"><i
                                                 class="fa-solid fa-pen-to-square"></i></a>
 
@@ -61,7 +61,6 @@
                                                     class="fa-solid fa-trash text-danger"></i>
                                         </form>
                                     </td>
-
                                 </tr>
                             @endforeach
                         </tbody>
@@ -70,4 +69,5 @@
             </div>
         </div>
     </div>
+    @include('characters.partials.modal_delete')
 @endsection
