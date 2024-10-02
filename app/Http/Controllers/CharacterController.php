@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Character;
+use App\Http\Requests\StoreCharacterRequest;
 
 class CharacterController extends Controller
 {
@@ -26,7 +27,7 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        //
+        return view('characters.create');
     }
 
     /**
@@ -35,9 +36,11 @@ class CharacterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCharacterRequest $request)
     {
-        //
+        $form_data = $request->validated();
+        Character::create($form_data);
+        return redirect()->route('characters.index');
     }
 
     /**

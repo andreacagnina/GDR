@@ -1,8 +1,24 @@
 @import '~bootstrap/scss/bootstrap';
+@import './_variables/color_text';
 
 body {
     background-color: #1d1d1d;
     font-family: 'Press Start 2P', cursive;
+}
+
+h1 {
+    font-size: 3rem;
+    color: $color_text;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+a,
+label {
+    text-decoration: none;
+    color: white;
 }
 
 #home {
@@ -15,14 +31,6 @@ body {
     background-image: url('../../public/images/PixelArtBackground.gif');
     background-size: cover;
 
-    h1 {
-        font-size: 3rem;
-        color: #f2e857;
-    }
-
-    p {
-        font-size: 1.2rem;
-    }
 
     .btn-start {
         display: inline-block;
@@ -32,7 +40,6 @@ body {
         color: #1d1d1d;
         text-transform: uppercase;
         font-weight: bold;
-        text-decoration: none;
         border-radius: 8px;
         box-shadow: 2px 2px 0 #111;
         transition: 0.3s ease;
@@ -56,6 +63,65 @@ header {
     }
 
     .nav-link:hover {
-        color: #f2e857;
+        color: $color_text;
     }
+
+    h3,
+    h4 {
+        margin: 0;
+    }
+}
+
+main {
+    td {
+        text-align: center;
+
+        a:hover {
+            color: $color_text;
+        }
+    }
+
+    h6 {
+        a {
+            color: #9b9d9e;
+
+            &:hover {
+                color: $color_text;
+            }
+        }
+    }
+
+    .color {
+        color: $color_text;
+    }
+
+    .btn-color {
+        padding: 10px 20px;
+        background-color: #1d1d1d;
+        color: $color_text;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: 1px solid $color_text ;
+        border-radius: 8px;
+
+        &:hover {
+            background-color: $color_text;
+            color: #1d1d1d;
+            transition: 0.5s ease;
+        }
+
+    }
+
+    .btn-color.reset {
+        border: 1px solid rgba(255, 0, 0, 0.76);
+        color: rgba(255, 0, 0, 0.76);
+
+        &:hover {
+            background-color: rgba(255, 0, 0, 0.76);
+            color: #1d1d1d;
+            transition: 0.5s ease;
+        }
+    }
+
+
 }
