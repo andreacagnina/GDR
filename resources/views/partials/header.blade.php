@@ -17,11 +17,11 @@
                             </li>
                             <li class="nav-item">
                                 <a href="" class="nav-link" style="line-height: 60px;">
-                                    <h4 class="m-0">About Us</h4>
+                                    <h4 class="m-0">AboutUs</h4>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link" style="line-height: 60px;">
+                                <a href="{{ route('characters.index')}}" class="nav-link" style="line-height: 60px;">
                                     <h4 class="m-0">Characters</h4>
                                 </a>
                             </li>
