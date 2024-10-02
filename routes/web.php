@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CharacterController as CharacterController;
+use App\Http\Controllers\AboutUsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,5 @@ use App\Http\Controllers\CharacterController as CharacterController;
 Route::get('/', function () {
     return view('home');
 })->name('homepage');
+
+Route::get('/about-us', [AboutUsController::class, 'index']);
