@@ -1,1 +1,47 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #1d1d1d;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('/images/background-pixel.png');
+    background-size: cover;
+}
+
+#home {
+    text-align: center;
+    margin-top: 50px;
+
+    h1 {
+        font-size: 3rem;
+        color: #f2e857;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .btn-start {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #57c7f2;
+        color: #1d1d1d;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        box-shadow: 2px 2px 0 #111;
+        transition: 0.3s ease;
+    }
+
+    .btn-start:hover {
+        background-color: #f25757;
+        transform: translateY(-3px);
+    }
+}
