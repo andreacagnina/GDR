@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('characters');
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
             $table->string('name', 200);
@@ -22,7 +23,7 @@ return new class extends Migration
             $table->integer('speed');
             $table->integer('intelligence');
             $table->integer('life');
-            $table->foreignId('type_id');
+            $table->unsignedBigInteger('type_id');
             $table->timestamps();
         });
     }
