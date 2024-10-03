@@ -6,7 +6,8 @@
             <div class="col-12">
                 <div class="content text-center d-flex justify-content-between align-items-baseline">
                     <h1>Characters</h1>
-                    <h6><a href="{{ Route('characters.create') }}">
+                    <h6><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCreate"
+                            aria-controls="offcanvasCreate">
                             + Add More
                         </a></h6>
                 </div>
@@ -45,7 +46,56 @@
                                     </td>
                                     <td>{{ $character->life }}
                                     </td>
-                                    <td>{{ $character->type_id }}
+                                    <td>
+                                        @switch($character->type_id)
+                                            @case(1)
+                                                <span class="text-barbarian">Barbarian</span>
+                                            @break
+
+                                            @case(2)
+                                                <span class="text-bard">Bard</span>
+                                            @break
+
+                                            @case(3)
+                                                <span class="text-cleric">Cleric</span>
+                                            @break
+
+                                            @case(4)
+                                                <span class="text-druid">Druid</span>
+                                            @break
+
+                                            @case(5)
+                                                <span class="text-fighter">Fighter</span>
+                                            @break
+
+                                            @case(6)
+                                                <span class="text-monk">Monk</span>
+                                            @break
+
+                                            @case(7)
+                                                <span class="text-paladin">Paladin</span>
+                                            @break
+
+                                            @case(8)
+                                                <span class="text-ranger">Ranger</span>
+                                            @break
+
+                                            @case(9)
+                                                <span class="text-rogue">Rogue</span>
+                                            @break
+
+                                            @case(10)
+                                                <span class="text-sorcerer">Sorcerer</span>
+                                            @break
+
+                                            @case(11)
+                                                <span class="text-warlock">Warlock</span>
+                                            @break
+
+                                            @case(12)
+                                                <span class="text-wizard">Wizard</span>
+                                            @break
+                                        @endswitch
                                     </td>
                                     <td class="d-flex align-items-center justify-content-evenly">
                                         <a class="color"
@@ -56,7 +106,10 @@
                                             method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm p-0 delete" onclick="return confirm('vuoi cancellare questo personaggio?')" data-charactertitle="{{ $character->title }}"><i class="fa-solid fa-trash text-danger"></i>
+                                            <button type="submit" class="btn btn-sm p-0 delete"
+                                                onclick="return confirm('vuoi cancellare questo personaggio?')"
+                                                data-charactertitle="{{ $character->title }}"><i
+                                                    class="fa-solid fa-trash text-danger"></i>
                                         </form>
                                     </td>
                                 </tr>
@@ -67,5 +120,6 @@
             </div>
         </div>
     </div>
+    @include('characters.create')
     @include('characters.partials.modal_delete')
 @endsection

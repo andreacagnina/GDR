@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import './_variables/color_text';
+@import './_variables/color_classes';
 
 body {
     background-color: #1d1d1d;
@@ -62,7 +63,7 @@ header {
     .navbar li {
         margin: 0px 10px;
 
-        .active{
+        .active {
             color: $color_text;
             margin-top: 3px;
             border-bottom: 3px solid $color_text;
@@ -134,5 +135,12 @@ main {
         }
     }
 
+    .card-body {
+        height: 700px;
+    }
+
+    .maxh-100 {
+        max-height: 100vh;
+    }
 
 }
