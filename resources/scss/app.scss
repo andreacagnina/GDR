@@ -62,7 +62,7 @@ header {
     .navbar li {
         margin: 0px 10px;
 
-        .active{
+        .active {
             color: $color_text;
             border-bottom: 5px solid $color_text;
         }
@@ -128,6 +128,10 @@ main {
             color: #1d1d1d;
             transition: 0.5s ease;
         }
+    }
+
+    .card-body {
+        height: 700px;
     }
 
 
