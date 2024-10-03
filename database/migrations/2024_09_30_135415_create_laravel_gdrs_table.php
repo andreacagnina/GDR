@@ -25,6 +25,7 @@ return new class extends Migration
             $table->integer('life');
             $table->unsignedBigInteger('type_id');
             $table->timestamps();
+            $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
         });
     }
 

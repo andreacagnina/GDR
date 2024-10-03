@@ -49,55 +49,53 @@
                                     <td>
                                         @switch($character->type_id)
                                             @case(1)
-                                                Barbarian
+                                                <span class="text-barbarian">Barbarian</span>
                                             @break
 
                                             @case(2)
-                                                Bard
+                                                <span class="text-bard">Bard</span>
                                             @break
 
                                             @case(3)
-                                                Cleric
+                                                <span class="text-cleric">Cleric</span>
                                             @break
 
                                             @case(4)
-                                                Druid
+                                                <span class="text-druid">Druid</span>
                                             @break
 
                                             @case(5)
-                                                Fighter
+                                                <span class="text-fighter">Fighter</span>
                                             @break
 
                                             @case(6)
-                                                Monk
+                                                <span class="text-monk">Monk</span>
                                             @break
 
                                             @case(7)
-                                                Paladin
+                                                <span class="text-paladin">Paladin</span>
                                             @break
 
                                             @case(8)
-                                                Ranger
+                                                <span class="text-ranger">Ranger</span>
                                             @break
 
                                             @case(9)
-                                                Rogue
+                                                <span class="text-rogue">Rogue</span>
                                             @break
 
                                             @case(10)
-                                                Sorcerer
+                                                <span class="text-sorcerer">Sorcerer</span>
                                             @break
 
                                             @case(11)
-                                                Warlock
+                                                <span class="text-warlock">Warlock</span>
                                             @break
 
                                             @case(12)
-                                                Wizard
+                                                <span class="text-wizard">Wizard</span>
                                             @break
                                         @endswitch
-
-                                        {{ $character->type_id }}
                                     </td>
                                     <td class="d-flex align-items-center justify-content-evenly">
                                         <a class="color"

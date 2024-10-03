@@ -1,5 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import './_variables/color_text';
+@import './_variables/color_classes';
 
 body {
     background-color: #1d1d1d;
@@ -134,11 +135,8 @@ main {
         height: 700px;
     }
 
-    .vh-90 {
-        height: 80vh;
+    .maxh-100 {
+        max-height: 100vh;
     }
 
-    .vh-10 {
-        height: 10vh;
-    }
 }
