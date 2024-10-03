@@ -46,7 +46,58 @@
                                     </td>
                                     <td>{{ $character->life }}
                                     </td>
-                                    <td>{{ $character->type_id }}
+                                    <td>
+                                        @switch($character->type_id)
+                                            @case(1)
+                                                Barbarian
+                                            @break
+
+                                            @case(2)
+                                                Bard
+                                            @break
+
+                                            @case(3)
+                                                Cleric
+                                            @break
+
+                                            @case(4)
+                                                Druid
+                                            @break
+
+                                            @case(5)
+                                                Fighter
+                                            @break
+
+                                            @case(6)
+                                                Monk
+                                            @break
+
+                                            @case(7)
+                                                Paladin
+                                            @break
+
+                                            @case(8)
+                                                Ranger
+                                            @break
+
+                                            @case(9)
+                                                Rogue
+                                            @break
+
+                                            @case(10)
+                                                Sorcerer
+                                            @break
+
+                                            @case(11)
+                                                Warlock
+                                            @break
+
+                                            @case(12)
+                                                Wizard
+                                            @break
+                                        @endswitch
+
+                                        {{ $character->type_id }}
                                     </td>
                                     <td class="d-flex align-items-center justify-content-evenly">
                                         <a class="color"
