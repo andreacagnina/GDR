@@ -31,18 +31,18 @@ class StoreCharacterRequest extends FormRequest
             'speed' => 'required|numeric|min:0|max:15',
             'intelligence' => 'required|numeric|min:0|max:15',
             'life' => 'required|numeric|min:50|max:150',
-            'type_id' => 'required|numeric|'
+            'type_id' => 'required|numeric'
         ];
     }
     public function messages()
     {
         return [
-            'name.required' => 'Questo campo è obbligatorio',
-            'strength.required' => 'Questo campo è obbligatorio',
-            'defence.required' => 'Questo campo è obbligatorio',
-            'speed.required' => 'Questo campo è obbligatorio',
-            'intelligence.required' => 'Questo campo è obbligatorio',
-            'life.required' => 'Questo campo è obbligatorio',
+            'name.required' => 'Campo obbligatorio',
+            'strength.required' => 'Campo obbligatorio',
+            'defence.required' => 'Campo obbligatorio',
+            'speed.required' => 'Campo obbligatorio',
+            'intelligence.required' => 'Campo obbligatorio',
+            'life.required' => 'Campo obbligatorio',
             'description.max' => 'Il testo inserito è troppo lungo',
             'strength.min' => 'Questo campo non può essere inferiore a 0',
             'defence.min' => 'Questo campo non può essere inferiore a 0',
@@ -54,7 +54,7 @@ class StoreCharacterRequest extends FormRequest
             'speed.max' => 'Questo campo non può essere superiore a 15',
             'intelligence.max' => 'Questo campo non può essere superiore a 15',
             'life.max' => 'Questo campo non può essere superiore a 150',
-            'type_id.required' => 'Questo campo è obbligatorio',
+            'type_id.required' => 'Campo obbligatorio',
         ];
     }
 }
