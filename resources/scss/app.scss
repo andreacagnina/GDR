@@ -60,6 +60,11 @@ header {
 
     .navbar li {
         margin: 0px 10px;
+
+        .active{
+            color: $color_text;
+            border-bottom: 10px solid $color_text;
+        }
     }
 
     .nav-link:hover {
@@ -70,6 +75,7 @@ header {
     h4 {
         margin: 0;
     }
+
 }
 
 main {
