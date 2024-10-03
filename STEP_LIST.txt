@@ -83,3 +83,22 @@ $table->string('title', 50);
 $table->year('year'); 
 $table->float('vote', 2, 1);
 php artisan migrate
+
+
+-databaseseeder
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     
+Seed the application's database.*/
+  public function run(): void{$this->call([UsersSeeder::class,StackholdersSeeder::class,VehiclesSeeder::class,DriversSeeder::class]);}
+}
+
+
+-comando per buttare giù tutto e ripopolare
+
+php artisan migrate:refresh --seed
+
+-aggiungere alla funzione per errore Migrations
+   Schema::dropIfExists('characters');
