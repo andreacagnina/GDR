@@ -13,10 +13,10 @@
                                 <a href="{{ route('characters.index') }}" class="{{ Route::currentRouteName() === 'characters.index' ? 'active' : ''}} nav-link"><h4>Characters</h4></a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link"><h4>Items</h4></a>
+                                <a href="" class="{{ Route::currentRouteName() === 'items' ? 'active' : ''}} nav-link"><h4>Items</h4></a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link"><h4>AboutUs</h4></a>
+                                <a href="{{ route('about-us') }}" class="{{ Route::currentRouteName() === 'about-us' ? 'active' : ''}} nav-link"><h4>AboutUs</h4></a>
                             </li>
                         </ul>
                     </div>

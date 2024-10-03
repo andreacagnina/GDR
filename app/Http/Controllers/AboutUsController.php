@@ -51,6 +51,6 @@ class AboutUsController extends Controller
             ],
         ];
         
-        return view('about-us', compact('team'));
+        return view('about-us.about-us', compact('team'));
     }
 }
