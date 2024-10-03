@@ -6,7 +6,8 @@
             <div class="col-12">
                 <div class="content text-center d-flex justify-content-between align-items-baseline">
                     <h1>Characters</h1>
-                    <h6><a href="{{ Route('characters.create') }}">
+                    <h6><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCreate"
+                            aria-controls="offcanvasCreate">
                             + Add More
                         </a></h6>
                 </div>
@@ -56,7 +57,10 @@
                                             method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm p-0 delete" onclick="return confirm('vuoi cancellare questo personaggio?')" data-charactertitle="{{ $character->title }}"><i class="fa-solid fa-trash text-danger"></i>
+                                            <button type="submit" class="btn btn-sm p-0 delete"
+                                                onclick="return confirm('vuoi cancellare questo personaggio?')"
+                                                data-charactertitle="{{ $character->title }}"><i
+                                                    class="fa-solid fa-trash text-danger"></i>
                                         </form>
                                     </td>
                                 </tr>
@@ -67,5 +71,6 @@
             </div>
         </div>
     </div>
+    @include('characters.create')
     @include('characters.partials.modal_delete')
 @endsection
