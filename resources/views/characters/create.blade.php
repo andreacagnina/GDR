@@ -42,7 +42,7 @@
                             <option value="12" {{ old('type_id') == 12 ? 'selected' : '' }}>Wizard</option>
                         </select>
                         @error('type_id')
-                            <div class="text-danger fs-6 small text-nowrap">{{ $message }}</div>
+                            <div class="text-danger fs-6 small">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
