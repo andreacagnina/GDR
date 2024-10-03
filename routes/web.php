@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CharacterController as CharacterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutUsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,4 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('homepage');
 Route::resource('characters', CharacterController::class);
+Route::get('/about-us', [AboutUsController::class, 'index']);
