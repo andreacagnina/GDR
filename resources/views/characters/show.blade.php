@@ -1,20 +1,18 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="card mb-3" style="max-width: 1200px;">
+                <div class="card bg-dark-gray border-0">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="{{ asset('images/barbarian.gif') }}" class="img-fluid rounded-start" alt="...">
                         </div>
                         <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $character->name }}</h5>
-                                <p class="card-text">{{ $character->description }}</p>
-
-                                <table class="table table-striped">
+                            <div class="card-body ">
+                                <h3 class="card-title text-center text-white">{{ $character->name }}</h3>
+                                <p class="card-text text-secondary">{{ $character->description }}</p>
+                                <table class="table table-striped table-dark">
                                     <thead>
                                         <tr>
                                             <th>Forza</th>
