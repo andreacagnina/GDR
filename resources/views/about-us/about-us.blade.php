@@ -14,7 +14,6 @@
                 <div class="col-12 col-md-4">
                     <div class="card text-center mb-4">
                         <img src="{{ asset('images/' . $member['image']) }}" alt="{{ $member['name'] }}" class="card-img-top">
-                        <img src="{{ $member['image'] }}" class="card-img-top" alt="img {{ $member['name'] }}">
                         <div class="card-body grey-bg">
                             <h4 class="card-title">{{ $member['name'] }}</h4>
                             <p class="card-text p-2 color bg-dark"><strong>{{ $member['role'] }}</strong></p>
