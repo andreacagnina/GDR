@@ -57,7 +57,7 @@ header {
 
     .navbar {
         align-items: center;
-        height: 50px;
+        height: 45px;
     }
 
     .navbar li {
@@ -65,17 +65,21 @@ header {
 
         .active {
             color: $color_text;
-            border-bottom: 5px solid $color_text;
+            margin-top: 3px;
+            border-bottom: 3px solid $color_text;
         }
     }
 
     .nav-link:hover {
         color: $color_text;
     }
+    h4{
+        font-size: 16px;
+    }
 
     h3,
     h4 {
-        margin: 0;
+        margin: 4px 0px 0px 0px;
     }
 
 }
