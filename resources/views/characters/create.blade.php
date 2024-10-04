@@ -3,7 +3,6 @@
     @if ($errors->any()) style="display: block;" @endif>>
     <div class="offcanvas-header color">
         <h5 id="offcanvasCreateLabel">Add A New Character</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
         <form action="{{ route('characters.store') }}" method="post">
@@ -95,8 +94,7 @@
                     <div class="mb-3">
                         <label class="form-label" for="intelligence">Intelligence</label>
                         <input class="form-control @error('intelligence') is-invalid @enderror" type="number"
-                            name="intelligence" id="intelligence" autocomplete="off"
-                            value="{{ old('intelligence') }}">
+                            name="intelligence" id="intelligence" autocomplete="off" value="{{ old('intelligence') }}">
                         @error('intelligence')
                             <div class="text-danger fs-6 small">{{ $message }}</div>
                         @enderror
