@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container my-3">
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="content text-center d-flex justify-content-between align-items-baseline">
@@ -29,7 +29,6 @@
                                 <th>Tools</th>
                             </tr>
                         </thead>
-
                         <tbody class="table-group-divider">
                             @foreach ($characters as $character)
                                 <tr>

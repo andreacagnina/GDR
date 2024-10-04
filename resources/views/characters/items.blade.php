@@ -1,15 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container my-3">
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="content text-center d-flex justify-content-between align-items-baseline">
-                    <h1>Characters</h1>
-                    <h6><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCreate"
-                            aria-controls="offcanvasCreate">
-                            + Add More
-                        </a></h6>
+                    <h1>Weapons</h1>
                 </div>
             </div>
         </div>
