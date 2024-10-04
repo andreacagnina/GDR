@@ -15,7 +15,7 @@ class AboutUsController extends Controller
                 'quote' => 'La giustizia non è altro che carità pubblica.',
                 'author' => 'Benjamin Franklin',
                 'email' => 'abc@bca.it',
-                'image' => '',
+                'image' => '../public/images/avatar(4)',
             ],
             [
                 'name' => "Simone D'Urso",
@@ -23,7 +23,7 @@ class AboutUsController extends Controller
                 'quote' => "Tutte le guerre sono basate sull'inganno.",
                 'author' => 'Sun Tzu',
                 'email' => 'def@bca.it',
-                'image' => '',
+                'image' => '../public/images/avatar(3)',
             ],
             [
                 'name' => "Rivaldo Gjoni",
@@ -31,7 +31,7 @@ class AboutUsController extends Controller
                 'quote' => "La vita è come andare in bicicletta. Per mantenere l'equilibrio, devi continuare a muoverti.",
                 'author' => 'Albert Einstein',
                 'email' => 'ghi@bca.it',
-                'image' => '',
+                'image' => '../public/images/avatar(2)',
             ],
             [
                 'name' => "Luca Di Santo",
@@ -39,7 +39,7 @@ class AboutUsController extends Controller
                 'quote' => "La virtù è il giusto mezzo tra due estremi.",
                 'author' => 'Aristotele',
                 'email' => 'lmn@bca.it',
-                'image' => '',
+                'image' => '../public/images/avatar(1)',
             ],
             [
                 'name' => 'Francesco Alquati',
