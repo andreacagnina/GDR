@@ -18,3 +18,4 @@ use App\Http\Controllers\AboutUsController;
 Route::get('/', [HomeController::class, 'index'])->name('homepage');
 Route::resource('characters', CharacterController::class);
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
+Route::get('/{character}/edit', [CharacterController::class, 'edit'])->name('edit');

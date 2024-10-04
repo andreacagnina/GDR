@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class StoreCharacterRequest extends FormRequest
+class UpdateCharacterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,14 +25,14 @@ class StoreCharacterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:characters|max:200',
-            'description' => 'max:255',
-            'strength' => 'required|numeric|min:0|max:15',
-            'defence' => 'required|numeric|min:0|max:15',
-            'speed' => 'required|numeric|min:0|max:15',
-            'intelligence' => 'required|numeric|min:0|max:15',
-            'life' => 'required|numeric|min:50|max:150',
-            'type_id' => 'required|numeric'
+            'name' => ['required', Rule::unique('characters')->ignore($this->character), 'max:200'],
+            'description' => ['max:255'],
+            'strength' => ['required', 'numeric', 'min:0', 'max:15'],
+            'defence' => ['required', 'numeric', 'min:0', 'max:15'],
+            'speed' => ['required', 'numeric', 'min:0', 'max:15'],
+            'intelligence' => ['required', 'numeric', 'min:0', 'max:15'],
+            'life' => ['required', 'numeric', 'min:50', 'max:150'],
+            'type_id' => ['required', 'numeric'],
         ];
     }
     public function messages()

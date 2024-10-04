@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-end w-75 maxh-100 bg-dark @if ($errors->any()) show @endif" tabindex="-1"
+<div class="offcanvas offcanvas-end w-50 bg-dark @if ($errors->any()) show @endif" tabindex="-1"
     id="offcanvasCreate" aria-labelledby="offcanvasCreateLabel"
     @if ($errors->any()) style="display: block;" @endif>>
     <div class="offcanvas-header color">
@@ -7,6 +7,9 @@
     <div class="offcanvas-body">
         <form action="{{ route('characters.store') }}" method="post">
             @csrf
+
+
+
             <div class="row">
                 <div class="col-6">
                     <div class="mb-3">
@@ -111,21 +114,18 @@
                     </div>
                 </div>
             </div>
-
-
             <div class="row">
-                <div class="col-2">
+                <div class="col">
                     <div class="mt-3">
                         <button type="submit" class="btn btn-color">Conferma</button>
                     </div>
                 </div>
-                <div class="col-2">
+                <div class="col">
                     <div class="mt-3">
                         <a class="btn btn-color reset" href="{{ route('characters.index') }}">Cancella</a>
                     </div>
                 </div>
             </div>
-
         </form>
     </div>
 </div>

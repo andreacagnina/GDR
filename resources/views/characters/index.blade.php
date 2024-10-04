@@ -121,5 +121,4 @@
         </div>
     </div>
     @include('characters.create')
-    @include('characters.partials.modal_delete')
 @endsection
