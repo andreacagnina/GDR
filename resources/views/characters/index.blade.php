@@ -4,18 +4,48 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="content text-center d-flex justify-content-between align-items-baseline">
+                <div class="content">
                     <h1>Characters</h1>
-                    <h6><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCreate"
-                            aria-controls="offcanvasCreate">
-                            + Add More
-                        </a></h6>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col">
+                <div class="content text-center">
+                    <a href="{{ route('characters.barbarian') }}"
+                        class="btn btn-outline-secondary text-barbarian">Barbarian</a>
+                    <a href="{{ route('characters.bard') }}" class="btn btn-outline-secondary text-bard">Bard</a>
+                    <a href="{{ route('characters.cleric') }}" class="btn btn-outline-secondary text-cleric">Cleric</a>
+                    <a href="{{ route('characters.druid') }}" class="btn btn-outline-secondary text-druid">Druid</a>
+                    <a href="{{ route('characters.fighter') }}" class="btn btn-outline-secondary text-fighter">Fighter</a>
+                    <a href="{{ route('characters.monk') }}" class="btn btn-outline-secondary text-monk">Monk</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="content text-center my-3">
+                        <a href="{{ route('characters.paladin') }}"
+                            class="btn btn-outline-secondary text-paladin">Paladin</a>
+                        <a href="{{ route('characters.ranger') }}" class="btn btn-outline-secondary text-ranger">Ranger</a>
+                        <a href="{{ route('characters.rogue') }}" class="btn btn-outline-secondary text-rogue">Rogue</a>
+                        <a href="{{ route('characters.sorcerer') }}"
+                            class="btn btn-outline-secondary text-sorcerer">Sorcery</a>
+                        <a href="{{ route('characters.warlock') }}"
+                            class="btn btn-outline-secondary text-warlock ">Warlock</a>
+                        <a href="{{ route('characters.wizard') }}" class="btn btn-outline-secondary text-wizard">Wizard</a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
                 <div class="content">
+                    <div>
+                        <h6><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCreate"
+                                aria-controls="offcanvasCreate">
+                                + Add More
+                            </a></h6>
+                    </div>
                     <table class="table table-dark table-striped-columns">
                         <thead>
                             <tr class="text-center">
