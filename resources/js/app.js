@@ -6,25 +6,30 @@ import.meta.glob([
     '../img/**'
 ])
 
-const buttons = document.querySelectorAll('.deleteCharacter')
+const buttons = document.querySelectorAll('.deleteCharacter');
 
 buttons.forEach((button) => {
 
-    button.addEventListener('click', function (e){
+    button.addEventListener('click', (e) => {
         e.preventDefault();
+
 
         const modal = document.getElementById('deleteCharacterModal');
 
         const bootstrap_modal = new bootstrap.Modal(modal);
 
         bootstrap_modal.show();
-        
-        // const buttonDelete = modal.querySelector('.confirm-delete');
 
-        // const characterName = button.getAttribute('data-characterName');
+        const characterName = button.getAttribute('data-characterName');
+        const ModalText = modal.querySelector('#modal_text');
+        ModalText.innerHTML = `Sei sicuro di volere cancellare questo Personaggio?<br><br><p class='color'><strong>--> ${characterName} <--</strong></p>`;
 
-        document.querySelector('.confirm-delete').addEventListener('click', function(){
+        const buttonDelete = modal.querySelector('.confirm-delete');
+        buttonDelete.replaceWith(buttonDelete.cloneNode(true));
+        const newButtonDelete = modal.querySelector('.confirm-delete');
+
+        buttonDelete.addEventListener('click', function () {
             button.parentElement.submit();
-        })
+        });
     });
 });

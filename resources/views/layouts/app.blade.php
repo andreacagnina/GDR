@@ -11,6 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>GDR</title>
     @vite('resources/scss/app.scss')
+    @vite(['resources/js/app.js'])
 </head>
 
 <body>
@@ -18,8 +19,9 @@
     <main>
         @yield('content')
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="path/to/your/javascript/file.js"></script>
 </body>
 
 </html>
