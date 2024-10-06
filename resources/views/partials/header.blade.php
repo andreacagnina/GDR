@@ -2,12 +2,16 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="navbar navbar-expand-md navbar-expand-sm fixed-top navbar-dark bg-dark px-5" id="ftco-navbar">
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark px-5" id="ftco-navbar">
                     <a class="navbar-brand d-flex align-items-center" href="{{ route('homepage') }}">
                         <h3>GCDR</h3>
                     </a>
-                    <div class="collapse navbar-collapse d-flex justify-content-end align-items-center" id="ftco-nav">
-                        <ul class="navbar-nav">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav"
+                        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse bg-dark" id="ftco-nav">
+                        <ul class="navbar-nav d-flex align-items-center ms-md-auto">
                             <li class="nav-item active">
                                 <a href="{{ route('homepage') }}"
                                     class="{{ Route::currentRouteName() === 'homepage' ? 'active' : '' }} nav-link">
@@ -34,6 +38,7 @@
                             </li>
                         </ul>
                     </div>
+
                 </nav>
             </div>
         </div>
