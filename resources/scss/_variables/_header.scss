@@ -1,0 +1,32 @@
+header {
+    height: 60px;
+
+    .navbar {
+        align-items: center;
+        height: 45px;
+    }
+
+    .navbar li {
+        margin: 0px 10px;
+
+        .active {
+            color: $color_text;
+            margin-top: 3px;
+            border-bottom: 3px solid $color_text;
+        }
+    }
+
+    .nav-link:hover {
+        color: $color_text;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    h3,
+    h4 {
+        margin: 4px 0px 0px 0px;
+    }
+
+}

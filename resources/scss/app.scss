@@ -1,6 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 @import './_variables/color_text';
 @import './_variables/color_classes';
+@import './_variables/header';
+@import './_variables/main';
 
 body {
     background-color: #1d1d1d;
@@ -50,130 +52,4 @@ label {
         background-color: #f25757;
         transform: translateY(-3px);
     }
-}
-
-header {
-    height: 60px;
-
-    .navbar {
-        align-items: center;
-        height: 45px;
-    }
-
-    .navbar li {
-        margin: 0px 10px;
-
-        .active {
-            color: $color_text;
-            margin-top: 3px;
-            border-bottom: 3px solid $color_text;
-        }
-    }
-
-    .nav-link:hover {
-        color: $color_text;
-    }
-
-    h4 {
-        font-size: 16px;
-    }
-
-    h3,
-    h4 {
-        margin: 4px 0px 0px 0px;
-    }
-
-}
-
-main {
-    height: calc(100vh - 60px);
-
-    td {
-        text-align: center;
-
-        a:hover {
-            color: $color_text;
-        }
-    }
-
-    h6 {
-        a {
-            color: #9b9d9e;
-
-            &:hover {
-                color: $color_text;
-            }
-        }
-    }
-
-    .color {
-        color: $color_text;
-    }
-
-    .btn-color {
-        padding: 10px 20px;
-        background-color: #1d1d1d;
-        color: $color_text;
-        text-transform: uppercase;
-        font-weight: bold;
-        border: 1px solid $color_text ;
-        border-radius: 8px;
-
-        &:hover {
-            background-color: $color_text;
-            color: #1d1d1d;
-            transition: 0.5s ease;
-        }
-
-    }
-
-    .btn-color.reset {
-        border: 1px solid rgba(255, 0, 0, 0.76);
-        color: rgba(255, 0, 0, 0.76);
-
-        &:hover {
-            background-color: rgba(255, 0, 0, 0.76);
-            color: #1d1d1d;
-            transition: 0.5s ease;
-        }
-    }
-
-    .card {
-        height: 869px;
-    }
-
-    .grey-bg {
-        background-color: #eeefee;
-    }
-
-    .bg-dark-gray {
-        background-color: #1d1d1d;
-    }
-
-    .btn-outline-color {
-        color: $color_text;
-        border: 1px solid $color_text;
-
-        &:hover {
-            background-color: #9b9d9e;
-            color: white;
-        }
-
-        .btn-color-gray {
-            background-color: #9b9d9e;
-            color: white;
-        }
-
-    }
-
-    .btn-color-gray {
-        background-color: #9b9d9e;
-        color: white;
-
-        &:hover {
-            background-color: #9b9d9e;
-            color: white;
-        }
-    }
-
 }
