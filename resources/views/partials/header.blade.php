@@ -4,7 +4,7 @@
             <div class="col-12">
                 <nav class="navbar navbar-expand-md navbar-dark bg-dark px-5" id="ftco-navbar">
                     <a class="navbar-brand d-flex align-items-center" href="{{ route('homepage') }}">
-                        <h3>GCDR</h3>
+                        <h3>GDR</h3>
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#ftco-nav"
                         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
