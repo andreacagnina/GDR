@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark px-5" id="ftco-navbar">
+                <nav class="navbar navbar-expand-md navbar-expand-sm fixed-top navbar-dark bg-dark px-5" id="ftco-navbar">
                     <a class="navbar-brand d-flex align-items-center" href="{{ route('homepage') }}">
                         <h3>GCDR</h3>
                     </a>
