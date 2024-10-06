@@ -36,13 +36,19 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="content text-center"><a href="{{ route('characters.index') }}"
+                            class="btn btn-outline-color">Show All</a></div>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-12">
                 <div class="content">
                     <div>
                         <h6><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCreate"
-                                aria-controls="offcanvasCreate">
+                                aria-controls="offcanvasCreate" class="btn btn-sm btn-color-gray">
                                 + Add More
                             </a></h6>
                     </div>

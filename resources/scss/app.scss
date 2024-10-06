@@ -150,4 +150,30 @@ main {
         background-color: #1d1d1d;
     }
 
+    .btn-outline-color {
+        color: $color_text;
+        border: 1px solid $color_text;
+
+        &:hover {
+            background-color: #9b9d9e;
+            color: white;
+        }
+
+        .btn-color-gray {
+            background-color: #9b9d9e;
+            color: white;
+        }
+
+    }
+
+    .btn-color-gray {
+        background-color: #9b9d9e;
+        color: white;
+
+        &:hover {
+            background-color: #9b9d9e;
+            color: white;
+        }
+    }
+
 }
