@@ -86,5 +86,10 @@ class CharacterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Character $character) {}
+    public function destroy(Character $character) {
+        
+        $character->delete();
+
+        return redirect()->route('characters.index');
+    }
 }
