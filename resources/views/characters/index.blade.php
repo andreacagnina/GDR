@@ -9,9 +9,9 @@
                 </div>
             </div>
         </div>
-        <div class="row ">
+        <div class="row">
             <div class="col">
-                <div class="content text-center">
+                <div class="content text-center margin-t">
                     <a href="{{ route('characters.barbarian') }}"
                         class="btn btn-outline-secondary text-barbarian">Barbarian</a>
                     <a href="{{ route('characters.bard') }}" class="btn btn-outline-secondary text-bard">Bard</a>
@@ -23,7 +23,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="content text-center my-3">
+                    <div class="content text-center margin-t">
                         <a href="{{ route('characters.paladin') }}"
                             class="btn btn-outline-secondary text-paladin">Paladin</a>
                         <a href="{{ route('characters.ranger') }}" class="btn btn-outline-secondary text-ranger">Ranger</a>
@@ -38,7 +38,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="content text-center"><a href="{{ route('characters.index') }}"
+                    <div class="content text-center margin-t"><a href="{{ route('characters.index') }}"
                             class="btn btn-outline-color">Show All</a></div>
                 </div>
             </div>
@@ -46,12 +46,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="content">
-                    <div>
-                        <h6><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCreate"
-                                aria-controls="offcanvasCreate" class="btn btn-sm btn-color-gray">
-                                + Add More
-                            </a></h6>
-                    </div>
+
+                    <h6><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCreate"
+                            aria-controls="offcanvasCreate" class="btn btn-sm btn-color-gray">
+                            + Add More
+                        </a></h6>
+
                     <table class="table table-dark table-striped-columns">
                         <thead>
                             <tr class="text-center">
@@ -141,7 +141,7 @@
                                             method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="button" class="btn btn-sm p-0 delete-character"
+                                            <button type="submit" class="btn btn-sm p-0 delete-character"
                                                 data-characterName="{{ $character->name }}"><i
                                                     class="fa-solid fa-trash text-danger"></i>
                                             </button>

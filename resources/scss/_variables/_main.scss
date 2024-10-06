@@ -1,0 +1,97 @@
+main {
+    height: calc(100vh - 60px);
+
+    td {
+        text-align: center;
+
+        a:hover {
+            color: $color_text;
+        }
+    }
+
+    h6 {
+        a {
+            color: #9b9d9e;
+
+            &:hover {
+                color: $color_text;
+            }
+        }
+    }
+
+    .color {
+        color: $color_text;
+    }
+
+    .btn-color {
+        padding: 10px 20px;
+        background-color: #1d1d1d;
+        color: $color_text;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: 1px solid $color_text ;
+        border-radius: 8px;
+
+        &:hover {
+            background-color: $color_text;
+            color: #1d1d1d;
+            transition: 0.5s ease;
+        }
+
+    }
+
+    .btn-color.reset {
+        border: 1px solid rgba(255, 0, 0, 0.76);
+        color: rgba(255, 0, 0, 0.76);
+
+        &:hover {
+            background-color: rgba(255, 0, 0, 0.76);
+            color: #1d1d1d;
+            transition: 0.5s ease;
+        }
+    }
+
+    .card {
+        height: 845px;
+    }
+
+    .grey-bg {
+        background-color: #eeefee;
+    }
+
+    .bg-dark-gray {
+        background-color: #1d1d1d;
+    }
+
+    .btn-outline-color {
+        color: $color_text;
+        border: 1px solid $color_text;
+
+        &:hover {
+            background-color: #9b9d9e;
+            color: white;
+        }
+
+        .btn-color-gray {
+            background-color: #9b9d9e;
+            color: white;
+        }
+
+    }
+
+    .btn-color-gray {
+        background-color: #9b9d9e;
+        color: white;
+
+        &:hover {
+            background-color: #9b9d9e;
+            color: white;
+        }
+    }
+
+    .margin-t a {
+        margin-top: 10px;
+    }
+
+
+}

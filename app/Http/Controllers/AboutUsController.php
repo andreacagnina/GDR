@@ -10,7 +10,8 @@ class AboutUsController extends Controller
     {
         $team = [
             [
-                'name' => 'Andrea Cagnina',
+                'name' => 'Andrea',
+                'surname' => 'Cagnina',
                 'role' => 'Legale Buono',
                 'quote' => 'La giustizia non è altro che carità pubblica.',
                 'author' => 'Benjamin Franklin',
@@ -18,7 +19,8 @@ class AboutUsController extends Controller
                 'image' => 'avatar-4.jpg',
             ],
             [
-                'name' => "Simone D'Urso",
+                'name' => "Simone",
+                'surname' => 'D\'Urso',
                 'role' => 'Legale Malvagio',
                 'quote' => "Tutte le guerre sono basate sull'inganno.",
                 'author' => 'Sun Tzu',
@@ -26,15 +28,17 @@ class AboutUsController extends Controller
                 'image' => 'avatar-3.jpg',
             ],
             [
-                'name' => "Rivaldo Gjoni",
-                'role' => 'Caotico Buono',
-                'quote' => "La vita è come andare in bicicletta. Per mantenere l'equilibrio, devi continuare a muoverti.",
-                'author' => 'Albert Einstein',
-                'email' => 'ghi@bca.it',
-                'image' => 'avatar-2.jpg',
+                'name' => 'Francesco',
+                'surname' => 'Alquati',
+                'role' => 'Neutrale Puro',
+                'quote' => 'Il mondo è cambiamento; la vita è opinione.',
+                'author' => 'Marcus Aurelius',
+                'email' => 'opq@bca.it',
+                'image' => 'avatar-5.jpg',
             ],
             [
-                'name' => "Luca Di Santo",
+                'name' => "Luca ",
+                'surname' => 'Di Santo',
                 'role' => 'Neutrale Buono',
                 'quote' => "La virtù è il giusto mezzo tra due estremi.",
                 'author' => 'Aristotele',
@@ -42,12 +46,13 @@ class AboutUsController extends Controller
                 'image' => 'avatar-1.jpg',
             ],
             [
-                'name' => 'Francesco Alquati',
-                'role' => 'Neutrale Puro',
-                'quote' => 'Il mondo è cambiamento; la vita è opinione.',
-                'author' => 'Marcus Aurelius',
-                'email' => 'opq@bca.it',
-                'image' => 'avatar-5.jpg',
+                'name' => "Rivaldo",
+                'surname' => 'Gjoni',
+                'role' => 'Caotico Buono',
+                'quote' => "La vita è come andare in bicicletta. Per mantenere l'equilibrio, devi continuare a muoverti.",
+                'author' => 'Albert Einstein',
+                'email' => 'ghi@bca.it',
+                'image' => 'avatar-2.jpg',
             ],
         ];
 
