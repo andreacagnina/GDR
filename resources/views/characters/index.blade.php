@@ -135,10 +135,10 @@
                                             method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-sm p-0 delete"
-                                                onclick="return confirm('vuoi cancellare questo personaggio?')"
-                                                data-charactertitle="{{ $character->title }}"><i
+                                            <button type="submit" class="btn btn-sm p-0 deleteCharacter"
+                                                data-characterName="{{ $character->name }}"><i
                                                     class="fa-solid fa-trash text-danger"></i>
+                                            </button>
                                         </form>
                                     </td>
                                 </tr>
@@ -150,4 +150,5 @@
         </div>
     </div>
     @include('characters.create')
+    @include('characters.character_modal')
 @endsection
