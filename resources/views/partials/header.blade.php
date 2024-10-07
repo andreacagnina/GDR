@@ -1,5 +1,5 @@
 <header>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand-md navbar-dark bg-dark px-5" id="ftco-navbar">
