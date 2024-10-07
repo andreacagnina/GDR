@@ -40,7 +40,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="col-6 d-flex justify-content-center">
+                <div class="col-6 d-flex justify-content-center ms-5">
                     <h3>Classe</h3>
                 </div>
                 <div class="col-12 mt-5 text-center">
