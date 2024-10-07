@@ -64,7 +64,8 @@
                     <div class="mb-3">
                         <label class="form-label" for="strength">Strength</label>
                         <input class="form-control @error('strength') is-invalid @enderror" type="number"
-                            name="strength" id="strength" autocomplete="off" value="{{ old('strength') }}">
+                            min="1" max="15" name="strength" id="strength" autocomplete="off"
+                            value="{{ old('strength') }}">
                         @error('strength')
                             <div class="text-danger fs-6 small">{{ $message }}</div>
                         @enderror
@@ -73,8 +74,9 @@
                 <div class="col-4">
                     <div class="mb-3">
                         <label class="form-label" for="defence">Defence</label>
-                        <input class="form-control @error('defence') is-invalid @enderror" type="number" name="defence"
-                            id="defence" autocomplete="off" value="{{ old('defence') }}">
+                        <input class="form-control @error('defence') is-invalid @enderror" type="number" min="1"
+                            max="15" name="defence" id="defence" autocomplete="off"
+                            value="{{ old('defence') }}">
                         @error('defence')
                             <div class="text-danger fs-6 small">{{ $message }}</div>
                         @enderror
@@ -83,8 +85,9 @@
                 <div class="col-4">
                     <div class="mb-3">
                         <label class="form-label" for="speed">Speed</label>
-                        <input class="form-control @error('speed') is-invalid @enderror" type="number" name="speed"
-                            id="speed" autocomplete="off" value="{{ old('speed') }}">
+                        <input class="form-control @error('speed') is-invalid @enderror" type="number" min="1"
+                            max="15" name="speed" id="speed" autocomplete="off"
+                            value="{{ old('speed') }}">
                         @error('speed')
                             <div class="text-danger fs-6 small">{{ $message }}</div>
                         @enderror
@@ -97,7 +100,8 @@
                     <div class="mb-3">
                         <label class="form-label" for="intelligence">Intelligence</label>
                         <input class="form-control @error('intelligence') is-invalid @enderror" type="number"
-                            name="intelligence" id="intelligence" autocomplete="off" value="{{ old('intelligence') }}">
+                            min="1" max="15" name="intelligence" id="intelligence" autocomplete="off"
+                            value="{{ old('intelligence') }}">
                         @error('intelligence')
                             <div class="text-danger fs-6 small">{{ $message }}</div>
                         @enderror
@@ -107,7 +111,8 @@
                     <div class="mb-3">
                         <label class="form-label" for="life">Life</label>
                         <input class="form-control @error('life') is-invalid @enderror" type="number" name="life"
-                            id="life" autocomplete="off" value="{{ old('life') }}">
+                            min="50" max="150" id="life" autocomplete="off"
+                            value="{{ old('life') }}">
                         @error('life')
                             <div class="text-danger fs-6 small">{{ $message }}</div>
                         @enderror
