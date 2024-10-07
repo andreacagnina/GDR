@@ -1,5 +1,11 @@
 header {
     height: 60px;
+    z-index: 1;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+
 
     .navbar li {
         margin: 0px 10px;
