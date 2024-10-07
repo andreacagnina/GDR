@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 px-0">
-                <nav class="navbar navbar-expand-md navbar-dark bg-dark px-5" id="ftco-navbar">
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark px-5 py-0" id="ftco-navbar">
                     <a class="navbar-brand d-flex align-items-center" href="{{ route('homepage') }}">
                         <h3>GDR</h3>
                     </a>
