@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('characters');
+        // Schema::dropIfExists('characters');
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
             $table->string('name', 200);
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('laravel_gdrs');
+        Schema::dropIfExists('characters');
     }
 };
