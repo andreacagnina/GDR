@@ -22,7 +22,7 @@
                                 </tr>
                                 <tr>
                                     <th class="bg-dark text-light">Difesa</th>
-                                    <td class="bg-dark text-light">{{ $character->defence }}</td>
+                                    <td class="bg-dark text-light">{{ $character->defense }}</td>
                                 </tr>
                                 <tr>
                                     <th class="bg-dark text-light">Velocità</th>

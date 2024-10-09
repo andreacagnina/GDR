@@ -57,7 +57,7 @@
                             <tr class="text-center">
                                 <th>Name</th>
                                 <th>Strength</th>
-                                <th>Defence</th>
+                                <th>Defense</th>
                                 <th>Speed</th>
                                 <th>Intelligence</th>
                                 <th>Life</th>
@@ -73,7 +73,7 @@
                                     </td>
                                     <td>{{ $character->strength }}
                                     </td>
-                                    <td>{{ $character->defence }}
+                                    <td>{{ $character->defense }}
                                     </td>
                                     <td>{{ $character->speed }}
                                     </td>

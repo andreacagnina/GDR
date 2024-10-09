@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name', 200);
             $table->text('description');
             $table->integer('strength');
-            $table->integer('defence');
+            $table->integer('defense');
             $table->integer('speed');
             $table->integer('intelligence');
             $table->integer('life');
@@ -36,7 +36,9 @@ return new class extends Migration
      */
     public function down()
     {
-        //AGGIUNGERE DROPDOWN FOREIGN KEY
+        Schema::table('characters', function (Blueprint $table) {
+            $table->dropForeign('characters_type_id_foreign');
+        });
         Schema::dropIfExists('characters');
     }
 };

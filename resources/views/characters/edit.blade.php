@@ -97,11 +97,11 @@
                         </div>
                         <div class="col-4">
                             <div class="mb-3">
-                                <label class="form-label" for="defence">Defence</label>
-                                <input class="form-control @error('defence') is-invalid @enderror" type="number"
-                                    name="defence" id="defence" autocomplete="off"
-                                    value="{{ old('defence', $character->defence) }}">
-                                @error('defence')
+                                <label class="form-label" for="defense">Defense</label>
+                                <input class="form-control @error('defense') is-invalid @enderror" type="number"
+                                    name="defense" id="defense" autocomplete="off"
+                                    value="{{ old('defense', $character->defense) }}">
+                                @error('defense')
                                     <div class="text-danger fs-6 small">{{ $message }}</div>
                                 @enderror
                             </div>
