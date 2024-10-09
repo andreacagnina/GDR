@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Type extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name', 'image', 'description'];
+
+    public function character()
+    {
+        return $this->belongsTo(Character::class);
+    }
 }

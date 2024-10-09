@@ -24,8 +24,8 @@ return new class extends Migration
             $table->integer('intelligence');
             $table->integer('life');
             $table->unsignedBigInteger('type_id');
+            $table->foreign('type_id')->references('id')->on('types');
             $table->timestamps();
-            $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
         });
     }
 
@@ -36,6 +36,7 @@ return new class extends Migration
      */
     public function down()
     {
+        //AGGIUNGERE DROPDOWN FOREIGN KEY
         Schema::dropIfExists('characters');
     }
 };
