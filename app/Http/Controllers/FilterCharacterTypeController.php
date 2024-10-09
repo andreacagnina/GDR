@@ -10,10 +10,9 @@ class FilterCharacterTypeController extends Controller
 {
     public function index($typeName)
     {
-
         $types = Type::all();
         $type = Type::where('name', $typeName)->firstOrFail();
-        $characters = Character::where('type_id', $type->id)->get();
+        $characters = $type->characters;
         return view('characters.index', compact('characters', 'type', 'types'));
     }
 }
