@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Character;
 use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
+use App\Models\Type;
+
+use function PHPSTORM_META\type;
 
 class CharacterController extends Controller
 {
@@ -17,8 +20,8 @@ class CharacterController extends Controller
     public function index()
     {
         $characters = Character::all();
-
-        return view('characters.index', compact('characters'));
+        $types = Type::all();
+        return view('characters.index', compact('characters', 'types'));
     }
 
     /**
@@ -26,9 +29,10 @@ class CharacterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Character $character, Type $type)
     {
-        return view('characters.create');
+        $types = Type::all();
+        return view('characters.create', compact('types'));
     }
 
     /**
@@ -86,8 +90,9 @@ class CharacterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Character $character) {
-        
+    public function destroy(Character $character)
+    {
+
         $character->delete();
 
         return redirect()->route('characters.index');

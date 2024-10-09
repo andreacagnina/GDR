@@ -11,8 +11,8 @@ class Character extends Model
 
     protected $fillable = ['name', 'description', 'strength', 'defense', 'speed', 'intelligence', 'life', 'type_id'];
 
-    public function types()
+    public function type()
     {
-        return $this->hasMany(Type::class);
+        return $this->belongsTo(Type::class);
     }
 }
