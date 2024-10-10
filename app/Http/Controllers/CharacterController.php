@@ -45,7 +45,7 @@ class CharacterController extends Controller
     {
         $form_data = $request->validated();
         $character = Character::create($form_data);
-        return redirect()->route('characters.index')->with('success', ucwords($character->name) . " si è unito alla battaglia");
+        return redirect()->route('characters.index')->with('success', ucwords($character->name) . " si è unito alla battaglia.");
     }
 
     /**
@@ -82,7 +82,7 @@ class CharacterController extends Controller
     {
         $form_data = $request->validated();
         $character->update($form_data);
-        return redirect()->route('characters.index', ['character' => $character->id])->with('success', "Al personaggio " . ucwords($character->name) . " sono stati cambiati i connotati");;
+        return redirect()->route('characters.index', ['character' => $character->id])->with('success', "Al personaggio " . ucwords($character->name) . " sono stati cambiati i connotati.");;
     }
 
     /**
@@ -96,6 +96,6 @@ class CharacterController extends Controller
 
         $character->delete();
 
-        return redirect()->route('characters.index')->with('success', ucwords($character->name) . " non fa più parte della tua squadra");
+        return redirect()->route('characters.index')->with('success', ucwords($character->name) . " non fa più parte della tua squadra.");
     }
 }

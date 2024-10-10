@@ -13,6 +13,10 @@ buttons.forEach((button) => {
     button.addEventListener('click', function (e) {
         e.preventDefault();
 
+        const characterName = button.getAttribute('data-characterName');
+        const modalTitle = document.getElementById('deleteCharacterModalLabel');
+        modalTitle.textContent = `Eliminazione di ${characterName}`;
+
         const modal = document.getElementById('deleteCharacterModal');
 
         const bootstrap_modal = new bootstrap.Modal(modal);
