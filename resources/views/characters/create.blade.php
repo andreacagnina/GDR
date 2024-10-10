@@ -31,7 +31,7 @@
                             class="form-control @error('type_id') is-invalid @enderror">
                             <option value="" disabled selected>-Select a Class-</option>
                             @foreach ($types as $type)
-                                <option value="{{ $type->id }}">{{ $type->name }}
+                                <option value="{{ $type->id }}" @selected($type->id == old('type_id'))>{{ $type->name }}
                                 </option>
                             @endforeach
                         </select>

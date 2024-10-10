@@ -33,5 +33,5 @@ Route::get('/', [HomeController::class, 'index'])->name('homepage');
 Route::get('/characters/type/{type}', [FilterCharacterTypeController::class, 'index'])->name('characters.indexByType');
 Route::resource('characters', CharacterController::class);
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('about-us');
-Route::get('/{character}/edit', [CharacterController::class, 'edit'])->name('edit');
+// Route::get('/{character}/edit', [CharacterController::class, 'edit'])->name('edit');
 Route::get('/items', [ItemController::class, 'index'])->name('items');

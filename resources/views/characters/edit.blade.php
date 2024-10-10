@@ -31,41 +31,14 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="mb-3">
-                                <label class="form-label" for="type_id">Class</label>
-                                <select class="form-control @error('type_id') is-invalid @enderror" name="type_id"
-                                    id="type_id">
-                                    <option value="" disabled selected>Select A Class</option>
-                                    <option value="1" {{ old('type_id', $character->type_id) == 1 ? 'selected' : '' }}>
-                                        Barbarian</option>
-                                    <option value="2" {{ old('type_id', $character->type_id) == 2 ? 'selected' : '' }}>
-                                        Bard
-                                    </option>
-                                    <option value="3" {{ old('type_id', $character->type_id) == 3 ? 'selected' : '' }}>
-                                        Cleric</option>
-                                    <option value="4" {{ old('type_id', $character->type_id) == 4 ? 'selected' : '' }}>
-                                        Druid</option>
-                                    <option value="5" {{ old('type_id', $character->type_id) == 5 ? 'selected' : '' }}>
-                                        Fighter</option>
-                                    <option value="6" {{ old('type_id', $character->type_id) == 6 ? 'selected' : '' }}>
-                                        Monk
-                                    </option>
-                                    <option value="7" {{ old('type_id', $character->type_id) == 7 ? 'selected' : '' }}>
-                                        Paladin</option>
-                                    <option value="8"
-                                        {{ old('type_id', $character->type_id) == 8 ? 'selected' : '' }}>
-                                        Ranger</option>
-                                    <option value="9"
-                                        {{ old('type_id', $character->type_id) == 9 ? 'selected' : '' }}>
-                                        Rogue</option>
-                                    <option value="10"
-                                        {{ old('type_id', $character->type_id) == 10 ? 'selected' : '' }}>
-                                        Sorcerer</option>
-                                    <option value="11"
-                                        {{ old('type_id', $character->type_id) == 11 ? 'selected' : '' }}>
-                                        Warlock</option>
-                                    <option value="12"
-                                        {{ old('type_id', $character->type_id) == 12 ? 'selected' : '' }}>
-                                        Wizard</option>
+                                <label for="type_id" class="form-label">Class</label>
+                                <select name="type_id" id="type_id"
+                                    class="form-control @error('type_id') is-invalid @enderror">
+                                    <option value="" disabled selected>-Select a Class-</option>
+                                    @foreach ($types as $type)
+                                        <option value="{{ $type->id }}" @selected($type->id == old('type_id', $character->type ? $character->type->id : ''))>{{ $type->name }}
+                                        </option>
+                                    @endforeach
                                 </select>
                                 @error('type_id')
                                     <div class="text-danger fs-6 small">{{ $message }}</div>

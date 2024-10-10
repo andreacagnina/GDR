@@ -25,6 +25,19 @@
                     </div>
                 </div>
             </div>
+
+            @if (session('success'))
+                <div class="row">
+                    <div class="col-12">
+                        <div class="content mt-1 text-center">
+                            <div id="success-alert" class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+
             <div class="row">
                 <div class="col-12">
                     <div class="content">
@@ -51,7 +64,7 @@
                                 @foreach ($characters as $character)
                                     <tr>
                                         <td><a
-                                                href="{{ route('characters.show', ['character' => $character->id]) }}">{{ $character->name }}</a>
+                                                href="{{ route('characters.show', ['character' => $character->id]) }}">{{ ucwords($character->name) }}</a>
                                         </td>
                                         <td>{{ $character->strength }}
                                         </td>
