@@ -24,7 +24,7 @@ class CharactersTableSeeder extends Seeder
             $NewCharacter->name = $character['name'];
             $NewCharacter->description = $character['description'];
             $NewCharacter->strength = $character['strength'];
-            $NewCharacter->defence = $character['defence'];
+            $NewCharacter->defense = $character['defense'];
             $NewCharacter->speed = $character['speed'];
             $NewCharacter->intelligence = $character['intelligence'];
             $NewCharacter->life = $character['life'];

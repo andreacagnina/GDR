@@ -10,8 +10,12 @@ const buttons = document.querySelectorAll('.delete-character')
 
 buttons.forEach((button) => {
 
-    button.addEventListener('click', function (e){
+    button.addEventListener('click', function (e) {
         e.preventDefault();
+
+        const characterName = button.getAttribute('data-characterName');
+        const modalTitle = document.getElementById('deleteCharacterModalLabel');
+        modalTitle.textContent = `Eliminazione di ${characterName}`;
 
         const modal = document.getElementById('deleteCharacterModal');
 
@@ -19,8 +23,20 @@ buttons.forEach((button) => {
 
         bootstrap_modal.show();
 
-        document.querySelector('.confirm-delete').addEventListener('click', function(){
+        document.querySelector('.confirm-delete').addEventListener('click', function () {
             button.parentElement.submit();
         })
     });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    var successAlert = document.getElementById('success-alert');
+
+    if (successAlert) {
+        setTimeout(function () {
+            successAlert.style.display = 'none';;
+        }, 4000);
+    }
+
 });

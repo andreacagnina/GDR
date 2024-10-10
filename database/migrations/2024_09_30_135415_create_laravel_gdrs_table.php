@@ -19,13 +19,13 @@ return new class extends Migration
             $table->string('name', 200);
             $table->text('description');
             $table->integer('strength');
-            $table->integer('defence');
+            $table->integer('defense');
             $table->integer('speed');
             $table->integer('intelligence');
             $table->integer('life');
             $table->unsignedBigInteger('type_id');
+            $table->foreign('type_id')->references('id')->on('types');
             $table->timestamps();
-            $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
         });
     }
 
@@ -36,6 +36,9 @@ return new class extends Migration
      */
     public function down()
     {
+        Schema::table('characters', function (Blueprint $table) {
+            $table->dropForeign('characters_type_id_foreign');
+        });
         Schema::dropIfExists('characters');
     }
 };

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Character;
 use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
+use App\Models\Type;
+
+use function PHPSTORM_META\type;
 
 class CharacterController extends Controller
 {
@@ -17,8 +20,8 @@ class CharacterController extends Controller
     public function index()
     {
         $characters = Character::all();
-
-        return view('characters.index', compact('characters'));
+        $types = Type::all();
+        return view('characters.index', compact('characters', 'types'));
     }
 
     /**
@@ -26,9 +29,10 @@ class CharacterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Character $character, Type $type)
     {
-        return view('characters.create');
+        $types = Type::all();
+        return view('characters.create', compact('types'));
     }
 
     /**
@@ -40,8 +44,8 @@ class CharacterController extends Controller
     public function store(StoreCharacterRequest $request)
     {
         $form_data = $request->validated();
-        Character::create($form_data);
-        return redirect()->route('characters.index');
+        $character = Character::create($form_data);
+        return redirect()->route('characters.index')->with('success', ucwords($character->name) . " si è unito alla battaglia.");
     }
 
     /**
@@ -63,7 +67,8 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
-        return view('characters.edit', compact('character'));
+        $types = Type::all();
+        return view('characters.edit', compact('character', 'types'));
     }
 
     /**
@@ -77,7 +82,7 @@ class CharacterController extends Controller
     {
         $form_data = $request->validated();
         $character->update($form_data);
-        return redirect()->route('characters.index', ['character' => $character->id]);
+        return redirect()->route('characters.index', ['character' => $character->id])->with('success', "Al personaggio " . ucwords($character->name) . " sono stati cambiati i connotati.");;
     }
 
     /**
@@ -86,10 +91,11 @@ class CharacterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Character $character) {
-        
+    public function destroy(Character $character)
+    {
+
         $character->delete();
 
-        return redirect()->route('characters.index');
+        return redirect()->route('characters.index')->with('success', ucwords($character->name) . " non fa più parte della tua squadra.");
     }
 }
