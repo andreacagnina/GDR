@@ -1,5 +1,5 @@
 <div class="offcanvas offcanvas-end w-75 bg-dark @if ($errors->any()) show @endif" tabindex="-1"
-    id="offcanvasCreate" aria-labelledby="offcanvasCreateLabel"
+    id="offcanvasCreate" aria-labelledby="offcanvasCreateLabel" data-bs-backdrop="static"
     @if ($errors->any()) style="display: block;" @endif>>
     <div class="offcanvas-header color">
         <h5 id="offcanvasCreateLabel">Add A New Character</h5>
