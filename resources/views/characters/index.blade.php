@@ -80,7 +80,7 @@
                                         </td>
                                         <td>
                                             <div class="row">
-                                                <div class="col-6">
+                                                <div class="col-4 offset-2">
                                                     <a class="color"
                                                         href="{{ route('characters.edit', ['character' => $character->id]) }}"><svg
                                                             width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -91,7 +91,7 @@
                                                         </svg>
                                                     </a>
                                                 </div>
-                                                <div class="col-6">
+                                                <div class="col-4">
                                                     <form
                                                         action="{{ route('characters.destroy', ['character' => $character->id]) }}"
                                                         method="post">

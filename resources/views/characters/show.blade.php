@@ -54,7 +54,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-6 d-none d-md-grid">
+                    <div class="col-6 d-none d-md-table-cell">
                         <div class="content px-5">
                             <p class="overflow-auto lh-lg" style="max-height: 300px;">
                                 {{ $character->type->description }}
