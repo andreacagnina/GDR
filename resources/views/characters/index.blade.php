@@ -77,26 +77,26 @@
                                         <td class="d-none d-md-table-cell">{{ $character->life }}
                                         </td>
                                         <td>
-                                            <span
-                                                class="text-{{ strtolower($character->type->name) }}">{{ $character->type->name }}</span>
+                                            <span class="text-{{ strtolower($character->type->name) }}">{{ $character->type->name }}</span>
                                         </td>
-                                        <td
-                                            class="d-flex
-                                        align-items-center justify-content-evenly">
-                                            <a class="color"
-                                                href="{{ route('characters.edit', ['character' => $character->id]) }}"><i
-                                                    class="fa-solid fa-pen-to-square"></i></a>
-
-                                            <form
-                                                action="{{ route('characters.destroy', ['character' => $character->id]) }}"
-                                                method="post">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-sm p-0 delete-character"
-                                                    data-characterName="{{ $character->name }}"><i
-                                                        class="fa-solid fa-trash text-danger"></i>
-                                                </button>
-                                            </form>
+                                        <td>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <a class="color" href="{{ route('characters.edit', ['character' => $character->id]) }}"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                </div>
+                                                <div class="col-6">
+                                                    <form
+                                                        action="{{ route('characters.destroy', ['character' => $character->id]) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-sm p-0 delete-character"
+                                                            data-characterName="{{ $character->name }}"><i
+                                                                class="fa-solid fa-trash text-danger"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 @endforeach
