@@ -57,6 +57,30 @@
                             </table>
                         </div>
                     </div>
+                    <div class="col-12">
+                        <form action="{{ route('characters.store') }}" method="post">
+                        @csrf
+                            <div class="content mb-3">
+                                <label for="type_id" class="form-label">Equip:</label>
+                                    <select name="type_id" id="type_id"
+                                    class="form-control @error('') is-invalid @enderror">
+                                        <option value="" disabled selected>-Select an Item-</option>
+                                        <option value="1" disabled selected>-Item 1-</option>
+                                        <option value="2" disabled selected>-Item 2-</option>
+                                    {{-- @foreach ( as )
+                                        <option value="{{  }}" @selected( == old(''))>
+                                            {{  }}
+                                        </option>
+                                    @endforeach --}}
+                                    </select>
+                                    @error('')
+                                        <div class="text-danger fs-6 small">{{ $message }}</div>
+                                    @enderror
+                                <div class="pt-1">
+                                <button type="submit" class="btn btn-color">Conferma</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

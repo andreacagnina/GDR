@@ -7,9 +7,6 @@
     <div class="offcanvas-body">
         <form action="{{ route('characters.store') }}" method="post">
             @csrf
-
-
-
             <div class="row">
                 <div class="col-6">
                     <div class="mb-3">
