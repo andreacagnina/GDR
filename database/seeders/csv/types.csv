@@ -2,7 +2,7 @@ name,image,description
 Barbarian,/img/character/barbarian.gif,"### Rage 
  
 In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. 
- 
+
 While raging, you gain the following benefits if you aren't wearing heavy armor: 
  
 * You have advantage on Strength checks and Strength saving throws. 
@@ -77,7 +77,7 @@ At 20th level, you embody the power of the wilds. Your Strength and Constitution
 Bard,/img/character/bard.gif,"### Spellcasting 
  
 You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. 
- 
+
 Your spells are part of your vast repertoire, magic that you can tune to different situations. 
  
 #### Cantrips 
