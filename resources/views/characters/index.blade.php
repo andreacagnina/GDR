@@ -51,11 +51,11 @@
                             <thead>
                                 <tr class="text-center">
                                     <th>Name</th>
-                                    <th class="d-none d-md-grid">Strength</th>
-                                    <th class="d-none d-md-grid">Defense</th>
-                                    <th class="d-none d-md-grid">Speed</th>
-                                    <th class="d-none d-md-grid">Intelligence</th>
-                                    <th class="d-none d-md-grid">Life</th>
+                                    <th class="d-none d-md-table-cell">Strength</th>
+                                    <th class="d-none d-md-table-cell">Defense</th>
+                                    <th class="d-none d-md-table-cell">Speed</th>
+                                    <th class="d-none d-md-table-cell">Intelligence</th>
+                                    <th class="d-none d-md-table-cell">Life</th>
                                     <th>Class</th>
                                     <th>Tools</th>
                                 </tr>
@@ -66,15 +66,15 @@
                                         <td><a
                                                 href="{{ route('characters.show', ['character' => $character->id]) }}">{{ ucwords($character->name) }}</a>
                                         </td>
-                                        <td class="d-none d-md-grid">{{ $character->strength }}
+                                        <td class="d-none d-md-table-cell">{{ $character->strength }}
                                         </td>
-                                        <td class="d-none d-md-grid">{{ $character->defense }}
+                                        <td class="d-none d-md-table-cell">{{ $character->defense }}
                                         </td>
-                                        <td class="d-none d-md-grid">{{ $character->speed }}
+                                        <td class="d-none d-md-table-cell">{{ $character->speed }}
                                         </td>
-                                        <td class="d-none d-md-grid">{{ $character->intelligence }}
+                                        <td class="d-none d-md-table-cell">{{ $character->intelligence }}
                                         </td>
-                                        <td class="d-none d-md-grid">{{ $character->life }}
+                                        <td class="d-none d-md-table-cell">{{ $character->life }}
                                         </td>
                                         <td>
                                             <span
