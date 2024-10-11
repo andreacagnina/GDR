@@ -110,7 +110,7 @@
             <div class="row">
                 <div class="col">
                     <div class="mt-3">
-                        <button type="submit" class="btn btn-color" id="liveToastBtn">Conferma</button>
+                        <button type="submit" class="btn btn-color">Conferma</button>
                         <a class="btn btn-color reset" href="{{ route('characters.index') }}">Cancella</a>
                     </div>
                 </div>

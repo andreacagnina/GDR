@@ -9,6 +9,17 @@
                 </div>
             </div>
         </div>
+        @if (session('success'))
+            <div class="row">
+                <div class="col-12">
+                    <div class="content mt-3 text-center">
+                        <div id="success-alert" class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
         <div class="row">
             <div class="col">
                 <div class="content text-center my-10">
@@ -25,19 +36,6 @@
                     </div>
                 </div>
             </div>
-
-            @if (session('success'))
-                <div class="row">
-                    <div class="col-12">
-                        <div class="content mt-3 text-center">
-                            <div id="success-alert" class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endif
-
             <div class="row">
                 <div class="col-12">
                     <div class="content">
