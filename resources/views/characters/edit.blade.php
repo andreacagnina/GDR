@@ -122,10 +122,6 @@
                         <div class="col">
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-color">Conferma</button>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="mt-3">
                                 <a class="btn btn-color reset" href="{{ route('characters.index') }}">Cancella</a>
                             </div>
                         </div>
