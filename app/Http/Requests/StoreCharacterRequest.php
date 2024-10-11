@@ -25,7 +25,7 @@ class StoreCharacterRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:characters|max:200',
-            'description' => 'required|max:255',
+            'description' => 'nullable|max:255',
             'strength' => 'required|numeric|min:0|max:15',
             'defense' => 'required|numeric|min:0|max:15',
             'speed' => 'required|numeric|min:0|max:15',
@@ -44,7 +44,6 @@ class StoreCharacterRequest extends FormRequest
             'speed.required' => 'Campo obbligatorio',
             'intelligence.required' => 'Campo obbligatorio',
             'life.required' => 'Campo obbligatorio',
-            'description..required' => 'Campo obbligatorio',
             'description.max' => 'Il testo inserito è troppo lungo',
             'strength.min' => 'Questo campo non può essere inferiore a 0',
             'defense.min' => 'Questo campo non può essere inferiore a 0',

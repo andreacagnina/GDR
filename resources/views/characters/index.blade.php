@@ -11,7 +11,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <div class="content text-center margin-t">
+                <div class="content text-center my-10">
                     @foreach ($types as $type)
                         <a href="{{ route('characters.indexByType', ['type' => $type->name]) }}"
                             class="btn btn-outline-secondary text-{{ strtolower($type->name) }}">{{ $type->name }}</a>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="content text-center margin-t"><a href="{{ route('characters.index') }}"
+                        <div class="content text-center my-10"><a href="{{ route('characters.index') }}"
                                 class="btn btn-outline-color">Show All</a></div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
             @if (session('success'))
                 <div class="row">
                     <div class="col-12">
-                        <div class="content mt-1 text-center">
+                        <div class="content mt-3 text-center">
                             <div id="success-alert" class="alert alert-success">
                                 {{ session('success') }}
                             </div>

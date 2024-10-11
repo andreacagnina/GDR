@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
             $table->string('name', 200);
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->integer('strength');
             $table->integer('defense');
             $table->integer('speed');
