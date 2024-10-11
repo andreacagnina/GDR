@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-end w-50 bg-dark @if ($errors->any()) show @endif" tabindex="-1"
+<div class="offcanvas offcanvas-end w-md-50 w-100 bg-dark @if ($errors->any()) show @endif" tabindex="-1"
     id="offcanvasCreate" aria-labelledby="offcanvasCreateLabel"
     @if ($errors->any()) style="display: block;" @endif>>
     <div class="offcanvas-header color">

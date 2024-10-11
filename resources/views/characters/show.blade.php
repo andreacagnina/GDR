@@ -12,93 +12,83 @@
             </div>
         </div>
     </div>
-    <div class="container  d-flex">
+    <div class="container d-flex card character-card bg-dark text-light p-4 rounded-5 d-flex h-100">
         <div class="row">
             <div class="col-12">
-                <div class=" content card character-card bg-dark text-light p-4 rounded-5 d-flex">
-                    <div class="col-12 text-center">
-                        <h1>{{ $character->name }}</h1>
-                    </div>
-                    <div class="col-12 text-center text-{{ strtolower($character->type->name) }}">
-                        <h2>{{ $character->type->name }}</h2>
-                    </div>
-                    <div class="col-12 text-center">
-                        <div class="card-body">
-                            <p class="mb-4">{{ $character->description }}</p>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="d-flex">
-                            <img id='character-img' src="{{ asset($character->type->image) }}" class="img-fluid rounded"
-                                alt="Character Image">
-                            <table class="table rounded-pill align-middle">
-                                <tbody>
-                                    <tr>
-                                        <th class="bg-dark text-light">Forza</th>
-                                        <td class="bg-dark text-light">{{ $character->strength }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="bg-dark text-light">Difesa</th>
-                                        <td class="bg-dark text-light">{{ $character->defense }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="bg-dark text-light">Velocità</th>
-                                        <td class="bg-dark text-light">{{ $character->speed }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="bg-dark text-light">Intelligenza</th>
-                                        <td class="bg-dark text-light">{{ $character->intelligence }}</td>
-                                    </tr>
-                                    <tr>
-                                        <th class="bg-dark text-light">Vita</th>
-                                        <td class="bg-dark text-light">{{ $character->life }}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <form action="{{ route('characters.store') }}" method="post">
-                        @csrf
-                            <div class="content mb-3">
-                                <label for="type_id" class="form-label">Equip:</label>
-                                    <select name="type_id" id="type_id"
-                                    class="form-control @error('') is-invalid @enderror">
-                                        <option value="" disabled selected>-Select an Item-</option>
-                                        <option value="1" disabled selected>-Item 1-</option>
-                                        <option value="2" disabled selected>-Item 2-</option>
-                                    {{-- @foreach ( as )
-                                        <option value="{{  }}" @selected( == old(''))>
-                                            {{  }}
-                                        </option>
-                                    @endforeach --}}
-                                    </select>
-                                    @error('')
-                                        <div class="text-danger fs-6 small">{{ $message }}</div>
-                                    @enderror
-                                <div class="pt-1">
-                                <button type="submit" class="btn btn-color">Conferma</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="content text-center ">
+                    <h1>{{ $character->name }}</h1>
+                    <h2 class="text-{{ strtolower($character->type->name) }}">{{ $character->type->name }}</h2>
+                    <p class="mb-4">{{ $character->description }}</p>
                 </div>
             </div>
         </div>
-
         <div class="row">
-            <div class="col-12 gx-5">
-                <div class="card character-card bg-dark text-light p-4 rounded-5">
-                    <div class="row h-100">
-                        <div class="col-12 h-100">
-                            <div class="content text-center h-100">
-                                <p class="overflow-auto h-100 lh-lg">
-                                    {{ $character->type->description }}
-                                </p>
-                            </div>
+            <div class="col-12 ">
+                <div class="content d-flex">
+                    <div class="col-md-3">
+                        <img id='character-img' src="{{ asset($character->type->image) }}" class="img-fluid rounded d-none d-md-inline" alt="Character Image">
+                    </div>
+                    <div class=" col-12 col-md-3">
+                        <table class="table rounded-pill align-middle">
+                            <tbody>
+                                <tr>
+                                    <th class="bg-dark text-light">Forza</th>
+                                    <td class="bg-dark text-light">{{ $character->strength }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-dark text-light">Difesa</th>
+                                    <td class="bg-dark text-light">{{ $character->defense }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-dark text-light">Velocità</th>
+                                    <td class="bg-dark text-light">{{ $character->speed }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-dark text-light">Intelligenza</th>
+                                    <td class="bg-dark text-light">{{ $character->intelligence }}</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-dark text-light">Vita</th>
+                                    <td class="bg-dark text-light">{{ $character->life }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-6 d-none d-md-grid">
+                        <div class="content px-5">
+                            <p class="overflow-auto lh-lg" style="max-height: 300px;">
+                                {{ $character->type->description }}
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        {{-- <div class="row">
+            <div class="col-12 col-md-6">
+                <form action="{{ route('characters.store') }}" method="post">
+                @csrf
+                    <div class="content mb-3">
+                        <label for="type_id" class="form-label">Equip:</label>
+                            <select name="type_id" id="type_id"
+                            class="form-control @error('') is-invalid @enderror">
+                                <option value="" disabled selected>-Select an Item-</option>
+                                <option value="1" disabled selected>-Item 1-</option>
+                                <option value="2" disabled selected>-Item 2-</option>
+                                @foreach ( as )
+                                <option value="{{  }}" @selected( == old(''))>
+                                    {{  }}
+                                </option>
+                                @endforeach
+                            </select>
+                            @error('')
+                                <div class="text-danger fs-6 small">{{ $message }}</div>
+                                @enderror
+                            </select>
+                        <button type="submit" class="btn btn-color">Conferma</button>
+                    </div>
+                </div>
+            </div>
+        </div> --}}
     </div>
 @endsection

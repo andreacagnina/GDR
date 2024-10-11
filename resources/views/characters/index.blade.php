@@ -51,11 +51,11 @@
                             <thead>
                                 <tr class="text-center">
                                     <th>Name</th>
-                                    <th>Strength</th>
-                                    <th>Defense</th>
-                                    <th>Speed</th>
-                                    <th>Intelligence</th>
-                                    <th>Life</th>
+                                    <th class="d-none d-md-grid">Strength</th>
+                                    <th class="d-none d-md-grid">Defense</th>
+                                    <th class="d-none d-md-grid">Speed</th>
+                                    <th class="d-none d-md-grid">Intelligence</th>
+                                    <th class="d-none d-md-grid">Life</th>
                                     <th>Class</th>
                                     <th>Tools</th>
                                 </tr>
@@ -66,15 +66,15 @@
                                         <td><a
                                                 href="{{ route('characters.show', ['character' => $character->id]) }}">{{ ucwords($character->name) }}</a>
                                         </td>
-                                        <td>{{ $character->strength }}
+                                        <td class="d-none d-md-grid">{{ $character->strength }}
                                         </td>
-                                        <td>{{ $character->defense }}
+                                        <td class="d-none d-md-grid">{{ $character->defense }}
                                         </td>
-                                        <td>{{ $character->speed }}
+                                        <td class="d-none d-md-grid">{{ $character->speed }}
                                         </td>
-                                        <td>{{ $character->intelligence }}
+                                        <td class="d-none d-md-grid">{{ $character->intelligence }}
                                         </td>
-                                        <td>{{ $character->life }}
+                                        <td class="d-none d-md-grid">{{ $character->life }}
                                         </td>
                                         <td>
                                             <span
