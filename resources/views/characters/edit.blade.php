@@ -62,7 +62,7 @@
                                 <label class="form-label" for="strength">Strength</label>
                                 <input class="form-control @error('strength') is-invalid @enderror" type="number"
                                     name="strength" id="strength" autocomplete="off"
-                                    value="{{ old('strength', $character->strength) }}">
+                                    value="{{ old('strength', $character->strength) }}"placeholder="(1-15)">
                                 @error('strength')
                                     <div class="text-danger fs-6 small">{{ $message }}</div>
                                 @enderror
@@ -73,7 +73,7 @@
                                 <label class="form-label" for="defense">Defense</label>
                                 <input class="form-control @error('defense') is-invalid @enderror" type="number"
                                     name="defense" id="defense" autocomplete="off"
-                                    value="{{ old('defense', $character->defense) }}">
+                                    value="{{ old('defense', $character->defense) }}"placeholder="(1-15)">
                                 @error('defense')
                                     <div class="text-danger fs-6 small">{{ $message }}</div>
                                 @enderror
@@ -84,7 +84,7 @@
                                 <label class="form-label" for="speed">Speed</label>
                                 <input class="form-control @error('speed') is-invalid @enderror" type="number"
                                     name="speed" id="speed" autocomplete="off"
-                                    value="{{ old('speed', $character->speed) }}">
+                                    value="{{ old('speed', $character->speed) }}"placeholder="(1-15)">
                                 @error('speed')
                                     <div class="text-danger fs-6 small">{{ $message }}</div>
                                 @enderror
@@ -98,7 +98,7 @@
                                 <label class="form-label" for="intelligence">Intelligence</label>
                                 <input class="form-control @error('intelligence') is-invalid @enderror" type="number"
                                     name="intelligence" id="intelligence" autocomplete="off"
-                                    value="{{ old('intelligence', $character->intelligence) }}">
+                                    value="{{ old('intelligence', $character->intelligence) }}"placeholder="(1-15)">
                                 @error('intelligence')
                                     <div class="text-danger fs-6 small">{{ $message }}</div>
                                 @enderror
@@ -109,7 +109,7 @@
                                 <label class="form-label" for="life">Life</label>
                                 <input class="form-control @error('life') is-invalid @enderror" type="number"
                                     name="life" id="life" autocomplete="off"
-                                    value="{{ old('life', $character->life) }}">
+                                    value="{{ old('life', $character->life) }}"placeholder="(50-150)">
                                 @error('life')
                                     <div class="text-danger fs-6 small">{{ $message }}</div>
                                 @enderror

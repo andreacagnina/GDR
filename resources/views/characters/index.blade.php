@@ -11,7 +11,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <div class="content text-center margin-t">
+                <div class="content text-center my-10">
                     @foreach ($types as $type)
                         <a href="{{ route('characters.indexByType', ['type' => $type->name]) }}"
                             class="btn btn-outline-secondary text-{{ strtolower($type->name) }}">{{ $type->name }}</a>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <div class="content text-center margin-t"><a href="{{ route('characters.index') }}"
+                        <div class="content text-center my-10"><a href="{{ route('characters.index') }}"
                                 class="btn btn-outline-color">Show All</a></div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
             @if (session('success'))
                 <div class="row">
                     <div class="col-12">
-                        <div class="content mt-1 text-center">
+                        <div class="content mt-3 text-center">
                             <div id="success-alert" class="alert alert-success">
                                 {{ session('success') }}
                             </div>
@@ -51,11 +51,11 @@
                             <thead>
                                 <tr class="text-center">
                                     <th>Name</th>
-                                    <th>Strength</th>
-                                    <th>Defense</th>
-                                    <th>Speed</th>
-                                    <th>Intelligence</th>
-                                    <th>Life</th>
+                                    <th class="d-none d-md-table-cell">Strength</th>
+                                    <th class="d-none d-md-table-cell">Defense</th>
+                                    <th class="d-none d-md-table-cell">Speed</th>
+                                    <th class="d-none d-md-table-cell">Intelligence</th>
+                                    <th class="d-none d-md-table-cell">Life</th>
                                     <th>Class</th>
                                     <th>Tools</th>
                                 </tr>
@@ -66,15 +66,15 @@
                                         <td><a
                                                 href="{{ route('characters.show', ['character' => $character->id]) }}">{{ ucwords($character->name) }}</a>
                                         </td>
-                                        <td>{{ $character->strength }}
+                                        <td class="d-none d-md-table-cell">{{ $character->strength }}
                                         </td>
-                                        <td>{{ $character->defense }}
+                                        <td class="d-none d-md-table-cell">{{ $character->defense }}
                                         </td>
-                                        <td>{{ $character->speed }}
+                                        <td class="d-none d-md-table-cell">{{ $character->speed }}
                                         </td>
-                                        <td>{{ $character->intelligence }}
+                                        <td class="d-none d-md-table-cell">{{ $character->intelligence }}
                                         </td>
-                                        <td>{{ $character->life }}
+                                        <td class="d-none d-md-table-cell">{{ $character->life }}
                                         </td>
                                         <td>
                                             <span
