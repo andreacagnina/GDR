@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('weight');
             $table->string('cost');
             $table->string('dice', 20);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
