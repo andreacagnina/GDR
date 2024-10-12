@@ -31,7 +31,7 @@
                     <div class=" col-12 col-md-3">
                         <table class="table rounded-pill align-middle">
                             <tbody>
-                                <tr>
+                                <tr class="border-top">
                                     <th class="bg-dark text-light">Forza</th>
                                     <td class="bg-dark text-light">{{ $character->strength }}</td>
                                 </tr>
