@@ -28,6 +28,7 @@ class ItemsTableSeeder extends Seeder
                 $item->weight = $item_data[4];
                 $item->cost = $item_data[5];
                 $item->dice = $item_data[6];
+                $item->image = $item_data[7];
 
                 $item->save();
             }
