@@ -29,7 +29,7 @@
                         <img id='character-img' src="{{ asset($character->type->image) }}" class="img-fluid rounded d-none d-md-inline" alt="Character Image">
                     </div>
                     <div class=" col-12 col-md-3">
-                        <table class="table rounded-pill align-middle">
+                        <table class="table rounded-pill align-middle border-top">
                             <tbody>
                                 <tr>
                                     <th class="bg-dark text-light">Forza</th>
@@ -62,6 +62,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-none d-md-table-cell mt-4 p-4 text-center">
+                <p class="text-info"> 
+                    @forelse($character->items as $item)
+                        {{ $item->name }},
+                    @empty
+                        <span class="text-danger">-nessuna item per il personaggio-</span>
+                    @endempty
+                </p>
             </div>
         </div>
         {{-- <div class="row">

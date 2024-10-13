@@ -31,7 +31,7 @@ class StoreCharacterRequest extends FormRequest
             'speed' => 'required|numeric|min:0|max:15',
             'intelligence' => 'required|numeric|min:0|max:15',
             'life' => 'required|numeric|min:50|max:150',
-            'type_id' => 'required|numeric|exists:types,id'
+            'type_id' => 'required|numeric|exists:types,id',
         ];
     }
     public function messages()
