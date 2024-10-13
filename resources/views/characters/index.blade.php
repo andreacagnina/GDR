@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="content">
-                    <h1>Characters</h1>
+                    <h1>Characters </h1>
                 </div>
             </div>
         </div>

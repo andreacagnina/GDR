@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="content text-center ">
-                    <h1>{{ $character->name }}</h1>
+                    <h1>{{ ucwords($character->name) }}</h1>
                     <h2 class="text-{{ strtolower($character->type->name) }}">{{ $character->type->name }}</h2>
                     <p class="mb-4">{{ $character->description }}</p>
                 </div>
