@@ -1,4 +1,4 @@
-<div class="offcanvas offcanvas-end w-75 bg-dark @if ($errors->any()) show @endif" tabindex="-1"
+<div class="offcanvas offcanvas-end w-75 bg-dark overflow-scroll @if ($errors->any()) show @endif" tabindex="-1"
     id="offcanvasCreate" aria-labelledby="offcanvasCreateLabel" data-bs-backdrop="static"
     @if ($errors->any()) style="display: block;" @endif>>
     <div class="offcanvas-header color">
@@ -105,6 +105,17 @@
                             <div class="text-danger fs-6 small">{{ $message }}</div>
                         @enderror
                     </div>
+                </div>
+            </div>
+            <div class="col-12 mt-2 mb-2 fs-10">
+                <label for="" class="control-label">Seleziona Items</label>
+                <div>
+                    @foreach ($items as $item)
+                        <div class="form-check-inline">
+                            <input type="checkbox" class="form-check-inline" name="items[]" id="" value="{{ $item->id }}" {{ old('items') ? (in_array($item->id, old('items')) ? 'checked' : '') : '' }}>
+                            <label for="" class="form-check-label">|{{ $item->name }}|</label>
+                        </div>
+                    @endforeach
                 </div>
             </div>
             <div class="row">

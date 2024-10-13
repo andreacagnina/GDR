@@ -7,6 +7,7 @@ use App\Models\Character;
 use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
 use App\Models\Type;
+use App\Models\Item;
 
 use function PHPSTORM_META\type;
 
@@ -21,7 +22,8 @@ class CharacterController extends Controller
     {
         $characters = Character::all();
         $types = Type::all();
-        return view('characters.index', compact('characters', 'types'));
+        $items = Item::all();
+        return view('characters.index', compact('characters', 'types', 'items'));
     }
 
     /**
@@ -31,8 +33,11 @@ class CharacterController extends Controller
      */
     public function create(Character $character, Type $type)
     {
+        // in realta essendo un offcanvas questo è inutile, bastano quelli nell'index.
         $types = Type::all();
-        return view('characters.create', compact('types'));
+        $items = Item::all();
+
+        return view('characters.create', compact('types', 'items'));
     }
 
     /**
@@ -45,6 +50,13 @@ class CharacterController extends Controller
     {
         $form_data = $request->validated();
         $character = Character::create($form_data);
+
+        if($request->has('items')){
+
+            $items = $request->items;
+            $character->items()->attach($items);
+        }
+
         return redirect()->route('characters.index')->with('success', ucwords($character->name) . " si è unito alla battaglia.");
     }
 
@@ -68,7 +80,9 @@ class CharacterController extends Controller
     public function edit(Character $character)
     {
         $types = Type::all();
-        return view('characters.edit', compact('character', 'types'));
+        $items = Item::all();
+
+        return view('characters.edit', compact('character', 'types','items'));
     }
 
     /**
@@ -82,6 +96,14 @@ class CharacterController extends Controller
     {
         $form_data = $request->validated();
         $character->update($form_data);
+
+        if($request->has('items')){
+            $character->items()->sync($request->items);
+        }
+        else{
+            $character->items()->sync([]);
+        }
+
         return redirect()->route('characters.index', ['character' => $character->id])->with('success', "Al personaggio " . ucwords($character->name) . " sono stati cambiati i connotati.");;
     }
 

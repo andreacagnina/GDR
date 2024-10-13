@@ -27,7 +27,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-6">
                             <div class="mb-3">
@@ -113,6 +112,21 @@
                                 @error('life')
                                     <div class="text-danger fs-6 small">{{ $message }}</div>
                                 @enderror
+                            </div>
+                        </div>
+                        <div class="col-12 mt-2 mb-2">
+                            <label for="" class="control-label">Seleziona Items</label>
+                            <div>
+                                @foreach ($items as $item)
+                                    <div class="form-check-inline">
+                                        @if ($errors->any())
+                                            <input type="checkbox" class="form-check-inline" name="items[]" id="" value="{{ $item->id }}" {{ in_array($item->id, old('items')) ? 'checked' : '' }}>
+                                        @else
+                                            <input type="checkbox" class="form-check-inline" name="items[]" id="" value="{{ $item->id }}" {{ $character->items->contains($item->id) ? 'checked' : '' }}>
+                                        @endif
+                                        <label for="" class="form-check-label">{{ $item->name }}</label>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
