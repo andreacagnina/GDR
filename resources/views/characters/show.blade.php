@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container mt-3">
+    <div class="container mt-3 mb-2">
         <div class="row">
             <div class="col-6">
                 <a href="{{ route('characters.index') }}" class="text-decoration-none">
@@ -11,25 +11,34 @@
                 </a>
             </div>
         </div>
-    </div>
-    <div class="container d-flex card character-card bg-dark text-light p-4 rounded-5 d-flex h-100">
-        <div class="row">
-            <div class="col-12">
-                <div class="content text-center ">
-                    <h1>{{ ucwords($character->name) }}</h1>
-                    <h2 class="text-{{ strtolower($character->type->name) }}">{{ $character->type->name }}</h2>
-                    <p class="mb-4">{{ $character->description }}</p>
+        <div class="container card character-card b-grey bg-dark text-light p-4 rounded-5 h-100">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content text-center">
+                        <h1>{{ ucwords($character->name) }}</h1>
+                        <h2 class="text-{{ strtolower($character->type->name) }}">{{ $character->type->name }}</h2>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12 ">
-                <div class="content d-flex">
-                    <div class="col-md-3">
-                        <img id='character-img' src="{{ asset($character->type->image) }}" class="img-fluid rounded d-none d-md-inline" alt="Character Image">
+            <div class="row mt-2">
+                <div class="d-flex">
+                    <div class="col-3">
+                        <img id='character-img' src="{{ asset($character->type->image) }}" class="img-fluid rounded"
+                            alt="Character Image">
                     </div>
-                    <div class=" col-12 col-md-3">
-                        <table class="table rounded-pill align-middle border-top">
+                    <div class="col-2 offset-1">
+                        <h4>Weapons:</h4>
+                        @forelse($character->items as $item)
+                            <div class="d-flex justify-content-between py-2">
+                                <p>{{ $item->name }}</p>
+                                <img id='item-img' src="{{ asset($item->image) }}" alt="Item Image" class="img-fluid">
+                            </div>
+                        @empty
+                            <span class="text-danger">-nessuna item per il personaggio-</span>
+                        @endforelse
+                    </div>
+                    <div class="col-5 offset-1">
+                        <table class="table table-borderless text-light">
                             <tbody>
                                 <tr>
                                     <th class="bg-dark text-light">Forza</th>
@@ -54,52 +63,35 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-6 d-none d-md-table-cell">
-                        <div class="content px-5">
-                            <p class="overflow-auto lh-lg" style="max-height: 300px;">
-                                {{ $character->type->description }}
-                            </p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="content text-center">
+                        <p class="mb-4">{{ $character->description }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2 justify-content-end">
+                <div class="col-5">
+                    <div class="btn-group dropup w-100">
+                        <button class="btn btn-secondary btn-lg dropdown-toggle w-100" type="button" data-toggle="dropdown"
+                            data-flip="false" aria-haspopup="true" aria-expanded="false">
+                            Descrizione
+                        </button>
+                        <div class="dropdown-menu w-100 m-0 p-1 bg-dark text-light text-center">
+                            <div>
+                                <h3 class="b-grey rounded-top-5 m-0 p-1">Descrizione:</h3>
+                            </div>
+                            <div class="content text-center b-grey rounded-bottom-5">
+                                <p class="overflow-auto" style="max-height: 320px;">
+                                    {{ $character->type->description }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
-        <div class="row">
-            <div class="col-12 d-none d-md-table-cell mt-4 p-4 text-center">
-                <p class="text-info"> 
-                    @forelse($character->items as $item)
-                        {{ $item->name }},
-                    @empty
-                        <span class="text-danger">-nessuna item per il personaggio-</span>
-                    @endempty
-                </p>
-            </div>
-        </div>
-        {{-- <div class="row">
-            <div class="col-12 col-md-6">
-                <form action="{{ route('characters.store') }}" method="post">
-                @csrf
-                    <div class="content mb-3">
-                        <label for="type_id" class="form-label">Equip:</label>
-                            <select name="type_id" id="type_id"
-                            class="form-control @error('') is-invalid @enderror">
-                                <option value="" disabled selected>-Select an Item-</option>
-                                <option value="1" disabled selected>-Item 1-</option>
-                                <option value="2" disabled selected>-Item 2-</option>
-                                @foreach ( as )
-                                <option value="{{  }}" @selected( == old(''))>
-                                    {{  }}
-                                </option>
-                                @endforeach
-                            </select>
-                            @error('')
-                                <div class="text-danger fs-6 small">{{ $message }}</div>
-                                @enderror
-                            </select>
-                        <button type="submit" class="btn btn-color">Conferma</button>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-    </div>
-@endsection
+    @endsection
