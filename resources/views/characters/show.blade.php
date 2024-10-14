@@ -16,7 +16,29 @@
                 <div class="col-12">
                     <div class="content text-center">
                         <h1>{{ ucwords($character->name) }}</h1>
-                        <h2 class="text-{{ strtolower($character->type->name) }}">{{ $character->type->name }}</h2>
+                        <div class="row">
+                            <div class="col-6">
+                                <h2 class="text-{{ strtolower($character->type->name) }}">{{ $character->type->name }}</h2>
+                            </div>
+                            <div class="col 6">
+                                <div class="btn-group dropdown w-100">
+                                    <button class="btn btn-secondary btn-lg dropdown-toggle w-100" type="button"
+                                        data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
+                                        Description
+                                    </button>
+                                    <div class="dropdown-menu w-100 m-0 p-1 bg-dark text-light text-center">
+                                        <div>
+                                            <h3 class="b-grey rounded-top-5 m-0 p-1">Class:</h3>
+                                        </div>
+                                        <div class="content text-center b-grey rounded-bottom-5">
+                                            <p class="overflow-auto" style="max-height: 250px;">
+                                                {{ $character->type->description }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -72,26 +94,5 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-2 justify-content-end">
-                <div class="col-5">
-                    <div class="btn-group dropup w-100">
-                        <button class="btn btn-secondary btn-lg dropdown-toggle w-100" type="button" data-toggle="dropdown"
-                            data-flip="false" aria-haspopup="true" aria-expanded="false">
-                            Descrizione
-                        </button>
-                        <div class="dropdown-menu w-100 m-0 p-1 bg-dark text-light text-center">
-                            <div>
-                                <h3 class="b-grey rounded-top-5 m-0 p-1">Descrizione:</h3>
-                            </div>
-                            <div class="content text-center b-grey rounded-bottom-5">
-                                <p class="overflow-auto" style="max-height: 320px;">
-                                    {{ $character->type->description }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     @endsection
