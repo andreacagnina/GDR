@@ -111,13 +111,6 @@
                 <label class="form-label mb-3" for="add-weapon">Choose some Weapons</label>
                 <div class="row">
                     @foreach ($items as $item)
-<<<<<<< HEAD
-                        <div class="form-check-inline">
-                            <input type="checkbox" class="form-check-inline" name="items[]" id=""
-                                value="{{ $item->id }}"
-                                {{ old('items') ? (in_array($item->id, old('items')) ? 'checked' : '') : '' }}>
-                            <label for="" class="form-check-label">|{{ $item->name }}|</label>
-=======
                         <div class="col-12 col-md-6 col-lg-4">
                             <div class="form-check my-1 d-flex align-items-baseline">
                                 <input type="checkbox" class="form-check-input" name="items[]"
@@ -126,7 +119,6 @@
                                 <label for="item-{{ $item->id }}"
                                     class="form-check-label ms-2 text-white">{{ $item->name }}</label>
                             </div>
->>>>>>> d98718980859baf84e86ca8b537bb5c04678703a
                         </div>
                     @endforeach
                 </div>
