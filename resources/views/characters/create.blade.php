@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="col-12 my-2 mb-2">
-                <label class="form-label mb-3" for="add-weapon">Take some Weapons</label>
+                <label class="form-label mb-3" for="add-weapon">Choose some Weapons</label>
                 <div class="row">
                     @foreach ($items as $item)
                         <div class="col-12 col-md-6 col-lg-4">
