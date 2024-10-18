@@ -1,5 +1,5 @@
-<div class="offcanvas offcanvas-end w-75 bg-dark overflow-scroll @if ($errors->any()) show @endif" tabindex="-1"
-    id="offcanvasCreate" aria-labelledby="offcanvasCreateLabel" data-bs-backdrop="static"
+<div class="offcanvas offcanvas-end w-75 bg-dark overflow-scroll @if ($errors->any()) show @endif"
+    tabindex="-1" id="offcanvasCreate" aria-labelledby="offcanvasCreateLabel" data-bs-backdrop="static"
     @if ($errors->any()) style="display: block;" @endif>>
     <div class="offcanvas-header color">
         <h5 id="offcanvasCreateLabel">Add A New Character</h5>
@@ -112,7 +112,9 @@
                 <div>
                     @foreach ($items as $item)
                         <div class="form-check-inline">
-                            <input type="checkbox" class="form-check-inline" name="items[]" id="" value="{{ $item->id }}" {{ old('items') ? (in_array($item->id, old('items')) ? 'checked' : '') : '' }}>
+                            <input type="checkbox" class="form-check-inline" name="items[]" id=""
+                                value="{{ $item->id }}"
+                                {{ old('items') ? (in_array($item->id, old('items')) ? 'checked' : '') : '' }}>
                             <label for="" class="form-check-label">|{{ $item->name }}|</label>
                         </div>
                     @endforeach
