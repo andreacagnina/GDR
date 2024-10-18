@@ -56,7 +56,7 @@
                                 <img id='item-img' src="{{ asset($item->image) }}" alt="Item Image" class="img-fluid">
                             </div>
                         @empty
-                            <span class="text-danger">-nessuna item per il personaggio-</span>
+                            <span class="text-danger">- Il personaggio non ha armi -</span>
                         @endforelse
                     </div>
                     <div class="col-5 offset-1">
