@@ -10,10 +10,23 @@ class CharacterController extends Controller
 {
     public function index()
     {
-        $characters = Character::with('type', 'items');
+        $characters = Character::with('type', 'items')->get();
         return response()->json([
             'success' => true,
             'results' => $characters
+        ]);
+    }
+    public function show($slug)
+    {
+        $character = Character::with('type', 'items')->where('slug', $slug)->first();
+        if ($character) {
+            return response()->json([
+                'success' => true,
+                'results' => $character
+            ]);
+        }
+        return response()->json([
+            'success' => false
         ]);
     }
 }
