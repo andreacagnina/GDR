@@ -36,21 +36,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateWeaponsVisibility() {
         const selectedClass = classSelect.options[classSelect.selectedIndex].text.toLowerCase(); // Ottieni la classe selezionata
-        console.log("Classe selezionata:", selectedClass);  // Mostra la classe selezionata
 
         weaponCheckboxes.forEach(function (checkbox) {
             const compatibleClasses = checkbox.getAttribute('data-classes').toLowerCase().split(',');
-            console.log("Arma ID:", checkbox.id, "Classi compatibili:", compatibleClasses);
 
             if (compatibleClasses.includes(selectedClass)) {
                 // Mostra l'arma
                 checkbox.closest('.col-12').style.display = 'block'; // Usa closest per risalire alla colonna
-                console.log("Mostra arma:", checkbox.id);
             } else {
                 // Nascondi l'arma
                 checkbox.closest('.col-12').style.display = 'none';  // Nasconde il contenitore dell'arma
                 checkbox.checked = false; // Deseleziona l'arma nascosta
-                console.log("Nascondi arma:", checkbox.id);
             }
         });
     }
