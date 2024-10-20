@@ -115,6 +115,7 @@
                             <div class="form-check my-1 d-flex align-items-baseline">
                                 <input type="checkbox" class="form-check-input" name="items[]"
                                     id="item-{{ $item->id }}" value="{{ $item->id }}"
+                                    data-classes="{{ implode(',', $item->getCompatibleClasses()) }}"
                                     {{ old('items') && in_array($item->id, old('items')) ? 'checked' : '' }}>
                                 <label for="item-{{ $item->id }}"
                                     class="form-check-label ms-2 text-white">{{ $item->name }}</label>
