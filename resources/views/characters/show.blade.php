@@ -57,7 +57,7 @@
                                     class="img-fluid rounded p-1" style="max-width: 50px; height: auto;">
                             </div>
                         @empty
-                            <span class="text-danger">-nessuna item per il personaggio-</span>
+                            <span class="text-danger">- Il personaggio non ha armi -</span>
                         @endforelse
                     </div>
 

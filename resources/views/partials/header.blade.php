@@ -24,12 +24,12 @@
                                     <h4>Characters</h4>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="{{ route('items') }}"
                                     class="{{ Route::currentRouteName() === 'items' ? 'active' : '' }} nav-link">
                                     <h4>Items</h4>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a href="{{ route('about-us') }}"
                                     class="{{ Route::currentRouteName() === 'about-us' ? 'active' : '' }} nav-link">

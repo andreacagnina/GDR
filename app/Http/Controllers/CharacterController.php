@@ -8,6 +8,7 @@ use App\Http\Requests\StoreCharacterRequest;
 use App\Http\Requests\UpdateCharacterRequest;
 use App\Models\Type;
 use App\Models\Item;
+use Illuminate\Support\Str;
 
 use function PHPSTORM_META\type;
 
@@ -49,9 +50,11 @@ class CharacterController extends Controller
     public function store(StoreCharacterRequest $request)
     {
         $form_data = $request->validated();
+        $form_data['slug'] = Str::slug($form_data['name'], '-');
         $character = Character::create($form_data);
 
-        if($request->has('items')){
+
+        if ($request->has('items')) {
 
             $items = $request->items;
             $character->items()->attach($items);
@@ -82,7 +85,7 @@ class CharacterController extends Controller
         $types = Type::all();
         $items = Item::all();
 
-        return view('characters.edit', compact('character', 'types','items'));
+        return view('characters.edit', compact('character', 'types', 'items'));
     }
 
     /**
@@ -97,10 +100,9 @@ class CharacterController extends Controller
         $form_data = $request->validated();
         $character->update($form_data);
 
-        if($request->has('items')){
+        if ($request->has('items')) {
             $character->items()->sync($request->items);
-        }
-        else{
+        } else {
             $character->items()->sync([]);
         }
 

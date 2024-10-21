@@ -1,5 +1,5 @@
-<div class="offcanvas offcanvas-end w-75 bg-dark overflow-scroll @if ($errors->any()) show @endif" tabindex="-1"
-    id="offcanvasCreate" aria-labelledby="offcanvasCreateLabel" data-bs-backdrop="static"
+<div class="offcanvas offcanvas-end w-75 bg-dark overflow-scroll @if ($errors->any()) show @endif"
+    tabindex="-1" id="offcanvasCreate" aria-labelledby="offcanvasCreateLabel" data-bs-backdrop="static"
     @if ($errors->any()) style="display: block;" @endif>>
     <div class="offcanvas-header color">
         <h5 id="offcanvasCreateLabel">Add A New Character</h5>
@@ -107,13 +107,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 mt-2 mb-2 fs-10">
-                <label for="" class="control-label">Seleziona Items</label>
-                <div>
+            <div class="col-12 my-2 mb-2">
+                <label class="form-label mb-3" for="add-weapon">Choose some Weapons</label>
+                <div class="row">
                     @foreach ($items as $item)
-                        <div class="form-check-inline">
-                            <input type="checkbox" class="form-check-inline" name="items[]" id="" value="{{ $item->id }}" {{ old('items') ? (in_array($item->id, old('items')) ? 'checked' : '') : '' }}>
-                            <label for="" class="form-check-label">|{{ $item->name }}|</label>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="form-check my-1 d-flex align-items-baseline">
+                                <input type="checkbox" class="form-check-input" name="items[]"
+                                    id="item-{{ $item->id }}" value="{{ $item->id }}"
+                                    data-classes="{{ implode(',', $item->getCompatibleClasses()) }}"
+                                    {{ old('items') && in_array($item->id, old('items')) ? 'checked' : '' }}>
+                                <label for="item-{{ $item->id }}"
+                                    class="form-check-label ms-2 text-white">{{ $item->name }}</label>
+                            </div>
                         </div>
                     @endforeach
                 </div>

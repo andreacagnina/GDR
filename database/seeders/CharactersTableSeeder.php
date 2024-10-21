@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Character;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 
 
@@ -22,6 +23,7 @@ class CharactersTableSeeder extends Seeder
         foreach ($characters as $character) {
             $NewCharacter = new Character();
             $NewCharacter->name = $character['name'];
+            $NewCharacter->slug = Str::slug($character['name'], '-');
             $NewCharacter->description = $character['description'];
             $NewCharacter->strength = $character['strength'];
             $NewCharacter->defense = $character['defense'];

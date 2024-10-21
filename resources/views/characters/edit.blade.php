@@ -115,16 +115,26 @@
                             </div>
                         </div>
                         <div class="col-12 mt-2 mb-2">
-                            <label for="" class="control-label">Seleziona Items</label>
-                            <div>
+                            <label for="change-weapon" class="control-label text-white mb-3">Change your
+                                Weapons</label>
+                            <div class="row">
                                 @foreach ($items as $item)
-                                    <div class="form-check-inline">
-                                        @if ($errors->any())
-                                            <input type="checkbox" class="form-check-inline" name="items[]" id="" value="{{ $item->id }}" {{ in_array($item->id, old('items')) ? 'checked' : '' }}>
-                                        @else
-                                            <input type="checkbox" class="form-check-inline" name="items[]" id="" value="{{ $item->id }}" {{ $character->items->contains($item->id) ? 'checked' : '' }}>
-                                        @endif
-                                        <label for="" class="form-check-label">{{ $item->name }}</label>
+                                    <div class="col-12 col-md-6 col-lg-4">
+                                        <div class="form-check my-1 d-flex align-items-baseline">
+                                            @if ($errors->any())
+                                                <input type="checkbox" class="form-check-input" name="items[]"
+                                                    id="item-{{ $item->id }}" value="{{ $item->id }}"
+                                                    data-classes="{{ implode(',', $item->getCompatibleClasses()) }}"
+                                                    {{ in_array($item->id, old('items')) ? 'checked' : '' }}>
+                                            @else
+                                                <input type="checkbox" class="form-check-input" name="items[]"
+                                                    id="item-{{ $item->id }}" value="{{ $item->id }}"
+                                                    data-classes="{{ implode(',', $item->getCompatibleClasses()) }}"
+                                                    {{ $character->items->contains($item->id) ? 'checked' : '' }}>
+                                            @endif
+                                            <label for="item-{{ $item->id }}"
+                                                class="form-check-label ms-2 text-white">{{ $item->name }}</label>
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
