@@ -6,11 +6,11 @@ Handaxe,handaxe,Weapons,Simple Melee Weapons,2 lb.,5 gp,1d6,/img/items/handaxe.p
 Javelin,javelin,Weapons,Simple Melee Weapons,2 lb.,5 sp,1d6,/img/items/javelin.png
 Light hammer,light-hammer,Weapons,Simple Melee Weapons,2 lb.,2 gp,1d4,/img/items/lighthammer.png
 Mace,mace,Weapons,Simple Melee Weapons,4 lb.,5 gp,1d6,/img/items/mace.png
-Quarterstaff,quarterstaff,Weapons,Simple Melee Weapons,4 lb.,2 sp,1d6,/img/items/
-Sickle,sickle,Weapons,Simple Melee Weapons,2 lb.,1 gp,1d4,/img/items/
+Quarterstaff,quarterstaff,Weapons,Simple Melee Weapons,4 lb.,2 sp,1d6,/img/items/quarterstuff.png
+Sickle,sickle,Weapons,Simple Melee Weapons,2 lb.,1 gp,1d4,/img/items/sickle.png
 Spear,spear,Weapons,Simple Melee Weapons,3 lb.,1 gp,1d6,/img/items/spear.png
-"Crossbow, light",crossbow-light,Weapons,Simple Ranged Weapons,5 lb.,25 gp,1d8,/img/items/
-Dart,dart,Weapons,Simple Ranged Weapons,0.25 lb.,5 cp,1d4,/img/items/
+"Crossbow, light",crossbow-light,Weapons,Simple Ranged Weapons,5 lb.,25 gp,1d8,/img/items/crossbow-light.png
+Dart,dart,Weapons,Simple Ranged Weapons,0.25 lb.,5 cp,1d4,/img/items/dart.png
 Shortbow,shortbow,Weapons,Simple Ranged Weapons,2 lb.,25 gp,1d6,/img/items/
 Sling,sling,Weapons,Simple Ranged Weapons,0 lb.,1 sp,1d4,/img/items/
 Battleaxe,battleaxe,Weapons,Martial Melee Weapons,4 lb.,10 gp,1d8,/img/items/
