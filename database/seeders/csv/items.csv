@@ -1,38 +1,38 @@
 name,slug,type,category,weight,cost,damage_dice,image
-Club,club,Weapons,Simple Melee Weapons,2 lb.,1 sp,1d4,/img/items/sword.jpg
-Dagger,dagger,Weapons,Simple Melee Weapons,1 lb.,2 gp,1d4,/img/items/sword.jpg
-Greatclub,greatclub,Weapons,Simple Melee Weapons,10 lb.,2 sp,1d8,/img/items/sword.jpg
-Handaxe,handaxe,Weapons,Simple Melee Weapons,2 lb.,5 gp,1d6,/img/items/sword.jpg
-Javelin,javelin,Weapons,Simple Melee Weapons,2 lb.,5 sp,1d6,/img/items/sword.jpg
-Light hammer,light-hammer,Weapons,Simple Melee Weapons,2 lb.,2 gp,1d4,/img/items/sword.jpg
-Mace,mace,Weapons,Simple Melee Weapons,4 lb.,5 gp,1d6,/img/items/sword.jpg
-Quarterstaff,quarterstaff,Weapons,Simple Melee Weapons,4 lb.,2 sp,1d6,/img/items/sword.jpg
-Sickle,sickle,Weapons,Simple Melee Weapons,2 lb.,1 gp,1d4,/img/items/sword.jpg
-Spear,spear,Weapons,Simple Melee Weapons,3 lb.,1 gp,1d6,/img/items/sword.jpg
-"Crossbow, light",crossbow-light,Weapons,Simple Ranged Weapons,5 lb.,25 gp,1d8,/img/items/sword.jpg
-Dart,dart,Weapons,Simple Ranged Weapons,0.25 lb.,5 cp,1d4,/img/items/sword.jpg
-Shortbow,shortbow,Weapons,Simple Ranged Weapons,2 lb.,25 gp,1d6,/img/items/sword.jpg
-Sling,sling,Weapons,Simple Ranged Weapons,0 lb.,1 sp,1d4,/img/items/sword.jpg
-Battleaxe,battleaxe,Weapons,Martial Melee Weapons,4 lb.,10 gp,1d8,/img/items/sword.jpg
-Flail,flail,Weapons,Martial Melee Weapons,2 lb.,10 gp,1d8,/img/items/sword.jpg
-Glaive,glaive,Weapons,Martial Melee Weapons,6 lb.,20 gp,1d10,/img/items/sword.jpg
-Greataxe,greataxe,Weapons,Martial Melee Weapons,7 lb.,30 gp,1d12,/img/items/sword.jpg
-Greatsword,greatsword,Weapons,Martial Melee Weapons,6 lb.,50 gp,2d6,/img/items/sword.jpg
-Halberd,halberd,Weapons,Martial Melee Weapons,6 lb.,20 gp,1d10,/img/items/sword.jpg
-Lance,lance,Weapons,Martial Melee Weapons,6 lb.,10 gp,1d12,/img/items/sword.jpg
-Longsword,longsword,Weapons,Martial Melee Weapons,3 lb.,15 gp,1d8,/img/items/sword.jpg
-Maul,maul,Weapons,Martial Melee Weapons,10 lb.,10 gp,2d6,/img/items/sword.jpg
-Morningstar,morningstar,Weapons,Martial Melee Weapons,4 lb.,15 gp,1d8,/img/items/sword.jpg
-Pike,pike,Weapons,Martial Melee Weapons,18 lb.,5 gp,1d10,/img/items/sword.jpg
-Rapier,rapier,Weapons,Martial Melee Weapons,2 lb.,25 gp,1d8,/img/items/sword.jpg
-Scimitar,scimitar,Weapons,Martial Melee Weapons,3 lb.,25 gp,1d6,/img/items/sword.jpg
-Shortsword,shortsword,Weapons,Martial Melee Weapons,2 lb.,10 gp,1d6,/img/items/sword.jpg
-Trident,trident,Weapons,Martial Melee Weapons,4 lb.,5 gp,1d6,/img/items/sword.jpg
-War pick,war-pick,Weapons,Martial Melee Weapons,2 lb.,5 gp,1d8,/img/items/sword.jpg
-Warhammer,warhammer,Weapons,Martial Melee Weapons,2 lb.,15 gp,1d8,/img/items/sword.jpg
-Whip,whip,Weapons,Martial Melee Weapons,3 lb.,2 gp,1d4,/img/items/sword.jpg
-Blowgun,blowgun,Weapons,Martial Ranged Weapons,1 lb.,10 gp,1d4,/img/items/sword.jpg
-"Crossbow, hand",crossbow-hand,Weapons,Martial Ranged Weapons,3 lb.,75 gp,1d6,/img/items/sword.jpg
-"Crossbow, heavy",crossbow-heavy,Weapons,Martial Ranged Weapons,18 lb.,50 gp,1d10,/img/items/sword.jpg
-Longbow,longbow,Weapons,Martial Ranged Weapons,2 lb.,50 gp,1d8,/img/items/sword.jpg
-Net,net,Weapons,Martial Ranged Weapons,3 lb.,1 gp,1d4,/img/items/sword.jpg
+Club,club,Weapons,Simple Melee Weapons,2 lb.,1 sp,1d4,/img/items/club.png
+Dagger,dagger,Weapons,Simple Melee Weapons,1 lb.,2 gp,1d4,/img/items/dagger.png
+Greatclub,greatclub,Weapons,Simple Melee Weapons,10 lb.,2 sp,1d8,/img/items/greatclub.png
+Handaxe,handaxe,Weapons,Simple Melee Weapons,2 lb.,5 gp,1d6,/img/items/handaxe.png
+Javelin,javelin,Weapons,Simple Melee Weapons,2 lb.,5 sp,1d6,/img/items/javelin.png
+Light hammer,light-hammer,Weapons,Simple Melee Weapons,2 lb.,2 gp,1d4,/img/items/lighthammer.png
+Mace,mace,Weapons,Simple Melee Weapons,4 lb.,5 gp,1d6,/img/items/mace.png
+Quarterstaff,quarterstaff,Weapons,Simple Melee Weapons,4 lb.,2 sp,1d6,/img/items/
+Sickle,sickle,Weapons,Simple Melee Weapons,2 lb.,1 gp,1d4,/img/items/
+Spear,spear,Weapons,Simple Melee Weapons,3 lb.,1 gp,1d6,/img/items/spear.png
+"Crossbow, light",crossbow-light,Weapons,Simple Ranged Weapons,5 lb.,25 gp,1d8,/img/items/
+Dart,dart,Weapons,Simple Ranged Weapons,0.25 lb.,5 cp,1d4,/img/items/
+Shortbow,shortbow,Weapons,Simple Ranged Weapons,2 lb.,25 gp,1d6,/img/items/
+Sling,sling,Weapons,Simple Ranged Weapons,0 lb.,1 sp,1d4,/img/items/
+Battleaxe,battleaxe,Weapons,Martial Melee Weapons,4 lb.,10 gp,1d8,/img/items/
+Flail,flail,Weapons,Martial Melee Weapons,2 lb.,10 gp,1d8,/img/items/
+Glaive,glaive,Weapons,Martial Melee Weapons,6 lb.,20 gp,1d10,/img/items/
+Greataxe,greataxe,Weapons,Martial Melee Weapons,7 lb.,30 gp,1d12,/img/items/
+Greatsword,greatsword,Weapons,Martial Melee Weapons,6 lb.,50 gp,2d6,/img/items/
+Halberd,halberd,Weapons,Martial Melee Weapons,6 lb.,20 gp,1d10,/img/items/
+Lance,lance,Weapons,Martial Melee Weapons,6 lb.,10 gp,1d12,/img/items/
+Longsword,longsword,Weapons,Martial Melee Weapons,3 lb.,15 gp,1d8,/img/items/
+Maul,maul,Weapons,Martial Melee Weapons,10 lb.,10 gp,2d6,/img/items/
+Morningstar,morningstar,Weapons,Martial Melee Weapons,4 lb.,15 gp,1d8,/img/items/
+Pike,pike,Weapons,Martial Melee Weapons,18 lb.,5 gp,1d10,/img/items/
+Rapier,rapier,Weapons,Martial Melee Weapons,2 lb.,25 gp,1d8,/img/items/
+Scimitar,scimitar,Weapons,Martial Melee Weapons,3 lb.,25 gp,1d6,/img/items/
+Shortsword,shortsword,Weapons,Martial Melee Weapons,2 lb.,10 gp,1d6,/img/items/
+Trident,trident,Weapons,Martial Melee Weapons,4 lb.,5 gp,1d6,/img/items/
+War pick,war-pick,Weapons,Martial Melee Weapons,2 lb.,5 gp,1d8,/img/items/
+Warhammer,warhammer,Weapons,Martial Melee Weapons,2 lb.,15 gp,1d8,/img/items/
+Whip,whip,Weapons,Martial Melee Weapons,3 lb.,2 gp,1d4,/img/items/
+Blowgun,blowgun,Weapons,Martial Ranged Weapons,1 lb.,10 gp,1d4,/img/items/
+"Crossbow, hand",crossbow-hand,Weapons,Martial Ranged Weapons,3 lb.,75 gp,1d6,/img/items/
+"Crossbow, heavy",crossbow-heavy,Weapons,Martial Ranged Weapons,18 lb.,50 gp,1d10,/img/items/
+Longbow,longbow,Weapons,Martial Ranged Weapons,2 lb.,50 gp,1d8,/img/items/
+Net,net,Weapons,Martial Ranged Weapons,3 lb.,1 gp,1d4,/img/items/
