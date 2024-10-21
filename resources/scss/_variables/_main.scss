@@ -105,7 +105,7 @@ main {
 
         #item-img {
             width: 30px;
-            height: 30px;
+            height: 40px;
         }
 
         .table {
@@ -144,5 +144,8 @@ main {
         border-bottom: 10px;
     }
 
+    #item-img {
+        border: 2px solid #484343;
+    }
 
 }

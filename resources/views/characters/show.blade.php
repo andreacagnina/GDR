@@ -49,16 +49,18 @@
                             alt="Character Image">
                     </div>
                     <div class="col-2 offset-1">
-                        <h4>Weapons:</h4>
+                        <h4 class="pb-3">Weapons:</h4>
                         @forelse($character->items as $item)
-                            <div class="d-flex justify-content-between py-2">
-                                <p>{{ $item->name }}</p>
-                                <img id='item-img' src="{{ asset($item->image) }}" alt="Item Image" class="img-fluid">
+                            <div class="d-flex align-items-center justify-content-between py-2">
+                                <p class="mb-0 text-start flex-grow-1">{{ $item->name }}</p>
+                                <img id='item-img' src="{{ url($item->image) }}" alt="Item Image"
+                                    class="img-fluid rounded p-1" style="max-width: 50px; height: auto;">
                             </div>
                         @empty
                             <span class="text-danger">-nessuna item per il personaggio-</span>
                         @endforelse
                     </div>
+
                     <div class="col-5 offset-1">
                         <table class="table table-borderless text-light">
                             <tbody>
