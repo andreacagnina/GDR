@@ -1,64 +1,44 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+PixelArt RPG Management System 🎮
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Benvenuto nel nostro PixelArt RPG Management System!
+Questo progetto di gruppo è stato sviluppato in Laravel e collegato a phpMyAdmin, e presenta un sistema di gestione di personaggi, oggetti e tipi, tutto in stile Pixel Art. Il sistema permette la gestione CRUD di personaggi, armi e classi, insieme a un'API per l'integrazione con Vue.js.
+Descrizione del Progetto
 
-## About Laravel
+L'applicazione consente di creare, modificare e visualizzare personaggi che appartengono a una determinata classe e possiedono oggetti (come armi). Il progetto è caratterizzato da una grafica in Pixel Art e si concentra su una semplice interazione gestionale con un'interfaccia chiara.
+Tabelle del Database
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Abbiamo creato tre tabelle principali per gestire i dati:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    Characters: I personaggi del gioco, con informazioni dettagliate come statistiche e classe.
+    Types: Le classi o i tipi a cui appartengono i personaggi (come Guerriero, Mago, ecc.). La relazione tra characters e types è di tipo one to many.
+    Items: Gli oggetti disponibili (solo armi). La relazione tra characters e items è di tipo many to many.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Abbiamo importato i dati di Type e Item tramite due file CSV. La lista dei Characters è presente nella cartella PHP del progetto.
+Funzionalità Principali
 
-## Learning Laravel
+    Homepage: La pagina principale del sito, che offre una panoramica del progetto e consente di navigare verso le altre sezioni.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    Elenco dei Personaggi: Una pagina che mostra un elenco tabellare di tutti i personaggi esistenti, con la possibilità di accedere a ciascun personaggio per visualizzarne i dettagli.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    Show Personaggio: Una pagina dettagliata per ogni personaggio, che mostra le sue statistiche, la classe di appartenenza e gli oggetti posseduti.
 
-## Laravel Sponsors
+    Crea Nuovo Personaggio: È possibile creare un nuovo personaggio, assegnandogli statistiche a scelta e oggetti limitati alla sua classe.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    Modifica o Elimina Personaggio: Oltre alla creazione, è possibile modificare o eliminare un personaggio dal database.
 
-### Premium Partners
+    Gestione Classi e Oggetti: Gestione CRUD delle classi (type) e degli oggetti (item) utilizzati dai personaggi.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+    Integrazione con Vue.js: Abbiamo implementato un'API controller che espone i dati per essere consumati da Vue.js, rendendo il progetto modulare e facilmente estendibile.
 
-## Contributing
+    About Us: Una sezione dedicata agli sviluppatori del progetto, con immagini in Pixel Art di ciascuno dei contribuenti al progetto.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    Armi in Pixel Art: Ogni personaggio può essere equipaggiato con oggetti o armi rappresentati in Pixel Art, per dare al progetto un'atmosfera retrò e divertente.
 
-## Code of Conduct
+Tecnologie Utilizzate
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    Laravel: Framework PHP per lo sviluppo del backend.
+    phpMyAdmin: Utilizzato per gestire il database.
+    Vue.js: Per la gestione delle viste dinamiche e l'interfacciamento con l'API.
+    Pixel Art: Utilizzata per le grafiche di personaggi, armi e contribuenti.
+    Blade: Motore di template di Laravel per gestire le pagine frontend.
+    CSV Import: Dati di Type e Item importati tramite file CSV.
